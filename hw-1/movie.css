@@ -7,3 +7,10 @@ body{
 .heading{
 	text-align: center;
 }
+
+.center{
+	width:55%;
+	margin:auto;
+	box-shadow: 5px 5px 5px grey;
+	background-color: #EEEEEE;
+}
