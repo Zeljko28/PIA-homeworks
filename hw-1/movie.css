@@ -13,4 +13,49 @@ body{
 	margin:auto;
 	box-shadow: 5px 5px 5px grey;
 	background-color: #EEEEEE;
+	display: table;
+	clear:both;
+}
+
+.header{
+
+	background-image: url('images/rbg.png');
+	margin-bottom: 1rem;
+	height: 83px;
+}
+
+.grade{
+	vertical-align: bottom;
+	color: red;
+	font-size: 48pt;
+	font-weight: bold;
+	font-family: Arial;
+	display: inline-flex;
+}
+
+.left{
+	float:left;
+	width:70%;
+}
+
+.right{
+	float: left;
+	width:30%;
+}
+
+#w3c{
+	clear:both;
+	text-align: right;
+}
+
+footer{
+	background-color: #A2B964;
+	padding: 0.5em;
+	text-align: center;
+	font-weight: bold;
+	clear:both;
+}
+
+.bleach{
+	width:100%;
 }
