@@ -11,10 +11,10 @@ body{
 }
 
 .center{
+	background-color: #A2B964;
 	width:55%;
 	margin:auto;
 	box-shadow: 5px 5px 5px grey;
-	background-color: #EEEEEE;
 	display: table;
 	clear:both;
 }
@@ -39,11 +39,14 @@ body{
 .left{
 	float:left;
 	width:70%;
+	background-color: #EEEEEE;
 }
 
 .right{
 	float: left;
 	width:30%;
+
+
 }
 
 #w3c{
@@ -61,4 +64,18 @@ footer{
 
 .bleach{
 	width:100%;
+}
+
+.textd{
+	margin-top: 15px;
+	padding-left: 15px;
+	padding-right: 10px;
+	font-family: Helvetica;
+	font-size: 12pt;
+
+}
+
+dt{
+	font-weight: bold;
+	margin-top: 15px;
 }
