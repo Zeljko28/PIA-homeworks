@@ -79,3 +79,9 @@ dt{
 	font-weight: bold;
 	margin-top: 15px;
 }
+
+ul{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
