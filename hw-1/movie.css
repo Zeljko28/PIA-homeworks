@@ -85,3 +85,30 @@ ul{
 	margin:0;
 	padding:0;
 }
+
+img{
+	margin-right: 5px;
+}
+
+.publication{
+	margin-left: 5%;
+	font-style: italic;
+}
+
+.quotebubble{
+	
+	font-family: Georgia;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #FFFFFF;
+	border: 2px solid #CCCCCC;
+	border-radius: 12px;
+	padding: 1em;
+
+}
+
+p{
+	font-family: Georgia;
+	font-size: 13pt;
+	margin-left: 5%;
+}
