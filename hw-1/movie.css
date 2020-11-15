@@ -14,7 +14,9 @@ body{
 	background-color: #A2B964;
 	width:55%;
 	margin:auto;
-	box-shadow: 5px 5px 5px grey;
+	box-shadow: 5px 5px 5px grey;  /* U tekstu pise sivi okvir, pretpostavka: senka glavnog dela stranice. 
+										Pretpostavka izvedena iz slike primera. */
+
 	display: table;
 	clear:both;
 }
@@ -76,7 +78,7 @@ footer{
 }
 
 dt{
-	font-weight: bold;
+	font-weight: bold; /* Boldovani samo naslovi, zbog slike primera */
 	margin-top: 15px;
 }
 
