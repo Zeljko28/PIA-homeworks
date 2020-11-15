@@ -2,7 +2,7 @@ body{
 	background-image: url('images/background.png'); 
 	margin:0; 
 	padding:0;
-	font-family: Helvetica;
+	font-family: Georgia;
 	font-size: 12pt;
 }
 
@@ -11,7 +11,8 @@ body{
 }
 
 .center{
-	background-color: #A2B964;
+	background-color: #A2B964; /* Boja centra je boja cele sredisnje sekcije, sem footera, pa su preko nje 
+									dodate ostale boje. */
 	width:55%;
 	margin:auto;
 	box-shadow: 5px 5px 5px grey;  /* U tekstu pise sivi okvir, pretpostavka: senka glavnog dela stranice. 
@@ -24,7 +25,8 @@ body{
 .header{
 	background-image: url('images/rbg.png');
 	margin-bottom: 1rem;
-	height: 83px;
+	height: 83px;  /* Baner se nije lepo prikazivao, pa sam na osnovu slike koja predstavlja baner(rgb.png),
+					postavio konkretno definisanu visinu. */
 
 }
 
@@ -93,7 +95,9 @@ img{
 }
 
 .publication{
-	margin-left: 5%;
+	
+	margin-left: 9%; /* Konkretno definisana vrednost, radi manjeg koplikovanja koda. 
+						P.S. Uradjeno na kraju. */
 	font-style: italic;
 }
 
@@ -112,5 +116,5 @@ img{
 p{
 	font-family: Georgia;
 	font-size: 13pt;
-	margin-left: 5%;
+	margin-left: 5%; 
 }
