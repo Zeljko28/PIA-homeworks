@@ -92,13 +92,19 @@ ul{
 
 img{
 	margin-right: 5px;
+	vertical-align: top;
+
 }
 
 .publication{
 	
+
 	margin-left: 9%; /* Konkretno definisana vrednost, radi manjeg koplikovanja koda. 
 						P.S. Uradjeno na kraju. */
+	vertical-align: top;
 	font-style: italic;
+	
+
 }
 
 .quotebubble{
@@ -118,3 +124,4 @@ p{
 	font-size: 13pt;
 	margin-left: 5%; 
 }
+
