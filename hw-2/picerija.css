@@ -1,5 +1,6 @@
 body{
-	background-image: url('bg.jpg');
+	background-image: url('images/bg.jpg');
+	font-family: Candara;
 }
 
 .navbar-header .navbar-brand{
@@ -31,4 +32,29 @@ body{
 	color: black;
 }
 
+.container-fluid .menu-title{
+	background:rgba(204, 204, 204, 0.7); 
+	margin-top: 25px;
+	padding: 20px;
+}
 
+.container-fluid .menu-list{
+	background:rgba(204, 204, 204, 0.7);
+}
+
+img{
+	border-radius: 10px;
+	border: 3px solid white;
+	width:600px;
+	height:350px;
+	box-shadow: 5px 5px 10px black;
+	margin-top: 15px;
+}
+
+.cont{
+	box-shadow: 0px 10px 20px inset;
+}
+
+.container-fluid .menu-list .txt{
+	margin-top: 15px;
+}
