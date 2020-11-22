@@ -139,5 +139,11 @@ img{
 	color:black;
 }
 
+.fa {
+  padding-right: 25px;
+  font-size: 30px;
+  width: 3px;
+  height: 3px;
+ }
 
 
