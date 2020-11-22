@@ -6,3 +6,29 @@ body{
 	font-size: 17pt;
 	font-family: Candara;
 }
+.first{
+	background: rgba(255, 0, 0, 0.5);
+}
+
+.container-fluid .after-nav{
+	margin-top: 70px;
+	padding-bottom: 30px;
+
+}
+
+.container-fluid .after-nav h1{
+	font-family: Candara;
+	font-size: 60pt;
+	padding-left: 35px;
+}
+
+.container-fluid .after-nav h2{
+	padding-left: 35px;
+}
+
+.container-fluid .after-nav a{
+	float:right;
+	color: black;
+}
+
+
