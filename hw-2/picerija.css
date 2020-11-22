@@ -11,35 +11,42 @@ body{
 	background: rgba(255, 0, 0, 0.5);
 }
 
-.container-fluid .after-nav{
+.first .after-nav{
 	margin-top: 70px;
 	padding-bottom: 30px;
 
 }
 
-.container-fluid .after-nav h1{
+.first .after-nav h1{
 	font-family: Candara;
 	font-size: 60pt;
 	padding-left: 35px;
 }
 
-.container-fluid .after-nav h2{
+.first .after-nav h2{
 	padding-left: 35px;
 }
 
-.container-fluid .after-nav a{
+.first .after-nav a{
 	float:right;
 	color: black;
 }
 
-.container-fluid .menu-title{
+.navbar-nav{
+	float:right;
+}
+
+.cont .menu-title{
 	background:rgba(204, 204, 204, 0.7); 
 	margin-top: 25px;
 	padding: 20px;
+	text-align: center;
+	border-top: 1px dotted grey;
+	border-bottom: 1px dotted grey;
 }
 
-.container-fluid .menu-list{
-	background:rgba(204, 204, 204, 0.7);
+.cont .menu-list{
+	background:rgba(204, 204, 204, 0.5);
 }
 
 img{
@@ -48,13 +55,51 @@ img{
 	width:600px;
 	height:350px;
 	box-shadow: 5px 5px 10px black;
-	margin-top: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .cont{
 	box-shadow: 0px 10px 20px inset;
 }
 
-.container-fluid .menu-list .txt{
+.cont .menu-list .txt{
 	margin-top: 15px;
 }
+
+.cont .menu-list .txt ul{
+	list-style-type: square;
+	font-size: 15pt;
+}
+
+.cont-au .au-list { 
+	background:rgba(204, 204, 204, 0.5);
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 30px;
+}
+
+.cont-au .au-title{
+	background:rgba(204, 204, 204, 0.7); 
+	margin-top: 25px;
+	padding: 20px;
+	text-align: center;
+	border-top: 1px dotted grey;
+	border-bottom: 1px dotted grey;
+
+}
+
+
+.cont-au{
+	box-shadow: 0px 10px 20px inset;
+	text-align: center;
+}
+
+.cont-au .au-list .au p{
+	font-size: 15pt;
+}
+
+.cont-footer{
+	box-shadow: 0px 10px 20px inset;
+}
+
