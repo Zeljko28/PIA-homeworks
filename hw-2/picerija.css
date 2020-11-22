@@ -72,11 +72,17 @@ img{
 	font-size: 15pt;
 }
 
+.cont .menu-list .txt .labels p{
+	font-size: 13pt;
+}
+
+
 .cont-au .au-list { 
 	background:rgba(204, 204, 204, 0.5);
 	padding-left: 50px;
 	padding-right: 50px;
 	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
 .cont-au .au-title{
@@ -99,7 +105,29 @@ img{
 	font-size: 15pt;
 }
 
+
+
 .cont-footer{
 	box-shadow: 0px 10px 20px inset;
 }
+
+.cont-footer .contact-title{
+	background:rgba(42, 42, 42, 0.7); 
+	margin-top: 25px;
+	padding: 20px;
+	text-align: center;
+	border-top: 1px dotted grey;
+	border-bottom: 1px dotted grey;
+
+}
+
+.cont-footer .contact-list{
+	background:rgba(42, 42, 42, 0.5);
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+
 
