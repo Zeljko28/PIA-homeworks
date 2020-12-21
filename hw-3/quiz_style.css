@@ -9,7 +9,7 @@ body{
 .login{
     display: block;
     background-image: url('images/lines.jpg');
-    /*background-color: rgba(255, 255, 255, 0.8);    */
+    /*background-color: rgba(255, 255, 255, 0.8);*/
     width: 400px;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -18,10 +18,10 @@ body{
 }
 
 
-.login h2{
+.login .wlcm h2{
     text-align: center;
     color: black;
-    font-family: "Courier New";
+    font-family: "Georgia";
     font-size: 25pt;
     font-weight: bold;
 }
@@ -47,7 +47,7 @@ body{
     height: 50px;
     font-size: 14pt;
     font-weight: bold;
-    font-family: "Courier New";
+    font-family: "Georgia";
 }
 .login .form #submit{
     display: block;
@@ -59,7 +59,7 @@ body{
     color: white;
     font-size: 14pt;
     font-weight: bold;
-    font-family: "Courier New";
+    font-family: "Georgia";
     margin-bottom: 20px;
 }
 
@@ -69,6 +69,65 @@ body{
 
 }
 
+/*Rules page div */
 
 
+.rules{
+    display: block;
+    background-image: url('images/lines.jpg');
+    background-size: cover;
+    width: 70%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
 
+.rules .header h2{
+    font-family: "Georgia";
+    font-weight: bold;
+    font-size: 25pt;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.rules .text p{
+    padding: 40px;
+    font-size: 17pt;
+    font-family: "Georgia";
+    font-weight: 550;
+    color: black;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-clip: padding-box;
+    backdrop-filter: blur(5px);
+
+}
+
+.rules .begin #start{
+    margin-top: 10px;
+
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+    background-color: darkblue;
+    color: white;
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: "Georgia";
+    margin-bottom: 10px;
+    float: right;
+    width: 200px;
+    margin-right: 20px;
+
+}
+
+.rules .begin #start:hover{
+    background-color: blue;
+}
