@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("images/bg.jpg");
+}
+
+/* Login page div */
+
+.login{
+    display: block;
+    background-image: url('images/lines.jpg');
+    /*background-color: rgba(255, 255, 255, 0.8);    */
+    width: 400px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
+.login h2{
+    text-align: center;
+    color: black;
+    font-family: "Courier New";
+    font-size: 25pt;
+    font-weight: bold;
+}
+
+.login .avatar{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.login .avatar img{
+    width:120px;
+    height: 120px;
+}
+
+.login .form{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.login .form #input{
+    height: 50px;
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: "Courier New";
+}
+.login .form #submit{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+    background-color: darkblue;
+    color: white;
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: "Courier New";
+    margin-bottom: 20px;
+}
+
+.login .form #submit:hover{
+    background-color: blue;
+    color: white;
+
+}
+
+
+
+
