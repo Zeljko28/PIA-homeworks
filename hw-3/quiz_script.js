@@ -1,11 +1,11 @@
 
 /* Login Page */
 
+var loginDiv = document.getElementById("login");
 var loginBtn = document.getElementById("submit");
 var nameValue;
 
 loginBtn.onclick = () => {
-    var loginDiv = document.getElementById("login");
     var rulesDiv = document.getElementById("rules");
     nameValue = document.getElementById("input").value;
     var text = nameValue.split(" ").join("");
@@ -33,7 +33,11 @@ startBtn.onclick = () => {
 
 /* Quiz Page */
 
+var exitBtn = document.getElementById("exit");
+exitBtn.onclick = () => {
+    location.reload();
 
+}
 
 
 
