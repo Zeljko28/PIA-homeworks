@@ -31,7 +31,7 @@
 
         <!-- ************* Rules page **************** -->
             
-            <div class="container rules">
+            <div id="rules" class="container rules">
 
                 <div class="row header">
                     <h2>Pravila igre</h2>
@@ -41,20 +41,48 @@
                     <p>
                         Dobrodošli u kviz! Ovaj kviz se sastoji od 10 pitanja.
                         Cilj je ostvariti što više poena. Pitanja su iz različitih oblasti.
-                        Svaki tačan odgovor nosi 5 poena. Vreme odgovora je ograničeno na 
+                        Svaki tačan odgovor nosi 5 poena. Svaki pogrešan odgovor nosi 0 poena.
+                         Vreme odgovora je ograničeno na 
                         20 sekundi. Kviz počinje klikom na "Počni kviz". Srećno!
                     </p>
 
                 </div>
 
                 <div class="row begin">
-                    <a id="start" href="javascript:void(0)">Pocni kviz</a>
+                    <a id="start" href="javascript:void(0)">Počni kviz</a>
                 </div>
-
 
             </div>
 
+        <!-- **************** Quiz page *******************-->
 
+            <div id="quiz" class="container quiz">
+
+                <div class="row question">
+
+                    <p>Koliko drzava ima na planeti?</p>
+
+                </div>
+
+                <div class="row answers-one">
+                    <div class="col-md-6">
+                        <a id="A" href="javascript:void(0)">Odgovor A</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a id="B" href="javascript:void(0)">Odgovor B</a>
+                    </div>
+                </div>
+
+                <div class="row answers-two">
+                    <div class="col-md-6">
+                        <a id="C" href="javascript:void(0)">Odgovor C</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a id="D" href="javascript:void(0)">Odgovor D</a>
+                    </div>
+                </div>
+
+            </div>
 
 
         

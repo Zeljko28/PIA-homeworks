@@ -21,7 +21,7 @@ body{
 .login .wlcm h2{
     text-align: center;
     color: black;
-    font-family: "Georgia";
+    font-family: "Candara";
     font-size: 25pt;
     font-weight: bold;
 }
@@ -47,7 +47,7 @@ body{
     height: 50px;
     font-size: 14pt;
     font-weight: bold;
-    font-family: "Georgia";
+    font-family: "Candara";
 }
 .login .form #submit{
     display: block;
@@ -59,7 +59,7 @@ body{
     color: white;
     font-size: 14pt;
     font-weight: bold;
-    font-family: "Georgia";
+    font-family: "Candara";
     margin-bottom: 20px;
 }
 
@@ -73,7 +73,7 @@ body{
 
 
 .rules{
-    display: block;
+    display: none;
     background-image: url('images/lines.jpg');
     background-size: cover;
     width: 70%;
@@ -85,9 +85,9 @@ body{
 }
 
 .rules .header h2{
-    font-family: "Georgia";
+    font-family: "Candara";
     font-weight: bold;
-    font-size: 25pt;
+    font-size: 27pt;
     margin-bottom: 30px;
     color: black;
 }
@@ -95,14 +95,12 @@ body{
 .rules .text p{
     padding: 40px;
     font-size: 17pt;
-    font-family: "Georgia";
-    font-weight: 550;
+    font-family: "Candara";
+    font-weight: 500;
     color: black;
-    border-top: 2px solid grey;
-    border-bottom: 2px solid grey;
-    margin-top: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    margin-top: 20px;
     background-clip: padding-box;
     backdrop-filter: blur(5px);
 
@@ -120,7 +118,7 @@ body{
     color: white;
     font-size: 14pt;
     font-weight: bold;
-    font-family: "Georgia";
+    font-family: "Candara";
     margin-bottom: 10px;
     float: right;
     width: 200px;
@@ -131,3 +129,61 @@ body{
 .rules .begin #start:hover{
     background-color: blue;
 }
+
+.rules .text mark{
+    background-color: lightblue;
+    color: black;
+    border-radius: 5px;
+}
+
+
+
+/* Quiz page div */
+
+
+.quiz{
+    display: none;
+    background-image: url('images/lines.jpg');
+    background-size: cover;
+    width: 70%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.quiz .question p{
+    font-size: 25pt;
+    font-weight: bold;
+    color: black;
+    font-family: "Candara";
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+.quiz a{
+
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    background-color: blue;
+    font-size: 15pt;
+    font-family: "Candara";
+    margin-bottom: 20px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    opacity: 0.6;
+    transition: 0.3s;
+    border: 2px solid black;
+}
+
+.quiz a:hover{
+    background-color: blue;
+    opacity: 1;
+}
+
