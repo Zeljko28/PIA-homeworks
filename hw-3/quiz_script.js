@@ -26,12 +26,57 @@ var quizDiv = document.getElementById("quiz");
 
 startBtn.onclick = () => {
     var rulesDiv = document.getElementById("rules");
+    var sectionBetweenDiv = document.getElementById("between");
+    sectionBetweenDiv.style.display = "block";
     rulesDiv.style.display = "none";
     quizDiv.style.display = "block";
+
+    setInterval(betweenCountdown, 1000);
+    setInterval(changeTimerColorRed, 500);
+    setInterval(changeTimerColorWhite, 1000);  
+}
+
+/* Between Page */
+
+var betweenTimer = 5;
+
+function betweenCountdown(){
+
+    if(betweenTimer >= 0){
+        document.getElementById("timer-between").innerHTML = "0:0" + betweenTimer;
+        betweenTimer--;
+    }
+    if(betweenTimer == -1){
+        document.getElementById("between").remove();
+        document.getElementById("quiz").style.opacity = 1;
+        document.getElementById("quiz").style.filter = "none";
+        document.getElementById("A").style.pointerEvents = "all";
+        document.getElementById("B").style.pointerEvents = "all";
+        document.getElementById("C").style.pointerEvents = "all";
+        document.getElementById("D").style.pointerEvents = "all";
+        document.getElementById("exit").style.pointerEvents = "all";
+        document.getElementById("next").style.pointerEvents = "all";
+        pickQuestion();
+
+        betweenTimer--;
+    }
+}
+
+function changeTimerColorRed(){
+    if(betweenTimer >= 0){
+        document.getElementById("timer-between").style.color = "red";
+    }
+}
+
+function changeTimerColorWhite(){
+    if(betweenTimer >= 0){
+        document.getElementById("timer-between").style.color = "white";
+    }
 }
 
 
 /* Quiz Page */
+
 
 var exitBtn = document.getElementById("exit");
 exitBtn.onclick = () => {
@@ -40,7 +85,6 @@ exitBtn.onclick = () => {
 
 var index;
 var questions;
-
 
 fetch('questions.json').then(function (response) {
     return response.json();
@@ -89,6 +133,8 @@ var nextBtn = document.getElementById("next");
 nextBtn.onclick = () => {
     pickQuestion();
 }
+
+
 
 
 
