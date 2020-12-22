@@ -1,0 +1,244 @@
+[
+    {
+        "question":"Koje godine je bila Kosovska bitka?",
+        "A":"1389.",
+        "B":"1371.",
+        "C":"1452.",
+        "D":"1437.",
+        "correct":"1389."
+    },
+    {
+        "question":"Kako se zove najveća građevina na svetu?",
+        "A":"Koloseum",
+        "B":"Krivi toranj u Pizi",
+        "C":"Ajfelova kula",
+        "D":"Kineski zid",
+        "correct":"Kineski zid"
+    },
+    {
+        "question": "Turski marš je komponovao:",
+        "A": "Robert Šuman",
+        "B": "Franc List", 
+        "C": "Volfgang Amadeus Mocart",
+        "D": "Frederik Šopen",
+        "correct": "Volfgang Amadeus Mocart"
+    },
+    {
+        "question":"Koja je najveća životinja na planeti?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"Plavi kit"
+    },
+    {
+        "question":"Kako se naziva nauka koja proučava pećine?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"Speleologija"
+    },
+    {
+        "question":"Koju državu je Napoleon prodao Amerikancima?",
+        "A":"Portugaliju",
+        "B":"Luizijanu",
+        "C":"Kolorado",
+        "D":"Nevadu",
+        "correct":"Luizijanu"
+    },
+    {
+        "question":"Koje je najdublje jezero na svetu?",
+        "A":"Bajkalsko jezero",
+        "B":"Kaspijsko jezero",
+        "C":"Viktorijino jezero",
+        "D":"Ništa od ponuđenog",
+        "correct":"Bajkalsko jezero"
+    },
+    {
+        "question":"Kako se zove univerzalni svetski jezik?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"Esperanto"
+    },
+    {
+        "question":"Kako se nazivaju ratovi vođeni između Rima i Kartagine?",
+        "A":"Punski ratovi",
+        "B":"Balkanski ratovi",
+        "C":"Krstaški ratovi",
+        "D":"Ništa od ponuđenog",
+        "correct":"Punski ratovi"
+    },
+    {
+        "question":"Šta proučava antropologija?",
+        "A":"Staru Grčku",
+        "B":"Vremenske promene",
+        "C":"Životinje",
+        "D":"Čoveka",
+        "correct":"Čoveka"
+    },
+    {
+        "question":"Kako se naziva slika sa likovima i događajima iz hrišćanske religije?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"Ikona"
+    },
+    {
+        "question":"Kako se naziva grupa od više ostrva?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"Arhipelag"
+    },
+    {
+        "question":"Koliko grama ima u toni?",
+        "A":"100 hiljada",
+        "B":"1 milion",
+        "C":"Hiljadu",
+        "D":"10 hiljada",
+        "correct":"1 milion"
+    },
+
+    {
+        "question":"U kom mestu je rođen Nikola Tesla?",
+        "A":"Tršić",
+        "B":"Kragujevac",
+        "C":"Smiljan",
+        "D":"Berane",
+        "correct":"Smiljan"
+    },
+    {
+        "question":"Koji je najveći gmizavac na svetu?",
+        "A":"Krokodil",
+        "B":"Aligator",
+        "C":"Komodo zmaj",
+        "D":"Ništa od navedenog",
+        "correct":"Krokodil"
+    },
+    {
+        "question":"Na koliko časovnih zona je podeljena Zemlja?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"24"
+    },
+    {
+        "question":"Kako još nazivamo Prvi Njutnov zakon?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"Zakon inercije"
+    },
+    {
+        "question":"Naziv biljke koja se koristila za pisanje u starom Egiptu?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"Papirus"
+    },
+    {
+        "question":"Na kojoj temperaturi je voda najgušća?",
+        "A":"+100C",
+        "B":"-1C",
+        "C":"+4C",
+        "D":"0C",
+        "correct":"+4C"
+    },
+    {
+        "question":"Koja američka država ima za simbol žutu ružu?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"Teksas"
+    },
+    {
+        "question":"Ko je komponovao balet Labudovo jezero?",
+        "A":"Ludvig Van Betoven",
+        "B":"Petar Iljič Čajkovski",
+        "C":"Nikolo Paganini",
+        "D":"Johan Sebastijan Bah",
+        "correct":"Petar Iljič Čajkovski"
+    },
+    {
+        "question":"Kako se zove slikarska tehnika u kojoj se koristi voda za rastvaranje boja?",
+        "A":"Pastel",
+        "B":"Enkaustika",
+        "C":"Akvarel",
+        "D":"Tempera",
+        "correct":"Akvarel"
+    },
+    {
+        "question":"Koja je najveća planeta u Sunčevom sistemu?",
+        "A":"Neptun",
+        "B":"Jupiter",
+        "C":"Saturn",
+        "D":"Venera",
+        "correct":"Jupiter"
+    },
+    {
+        "question":"Kako se naziva glagolski oblik kojim se iskazuje zapovest?",
+        "A":"",
+        "B":"",
+        "C":"",
+        "D":"",
+        "correct":"Imperativ"
+    },
+    {
+        "question":"Koje godine se odigrala Cerska bitka?",
+        "A":"1915.",
+        "B":"1914.",
+        "C":"1918.",
+        "D":"1908.",
+        "correct":"1914."
+    },
+    {
+        "question":"Minotaur je bio pola čovek pola...?",
+        "A":"Konj",
+        "B":"Bik",
+        "C":"Orao",
+        "D":"Ništa od navedenog",
+        "correct":"Bik"
+    },
+    {
+        "question":"Koji je najveći grad na svetu po broju stanovnika?",
+        "A":"Mumbaj",
+        "B":"Tokio",
+        "C":"Šangaj",
+        "D":"Seul",
+        "correct":"Tokio"
+    },
+    {
+        "question":"Planinama se nazivaju uzvišenja iznad koliko metara nadmorske visine?",
+        "A":"500m",
+        "B":"1000m",
+        "C":"1500m",
+        "D":"800m",
+        "correct":"500m"
+    }, 
+    {
+        "question":"Koja je najduža srpska reka?",
+        "A":"Sava",
+        "B":"Tisa",
+        "C":"Dunav",
+        "D":"Velika Morava",
+        "correct":"Velika Morava"
+    },    
+    {
+        "question":"Ko je osnovao prvu srpsku državu?",
+        "A":"Stefan Prvovenčani",
+        "B":"Stefan Uroš IV Dušan (Dušan Silni)",
+        "C":"Stefan Dečanski",
+        "D":"Stefan Nemanja",
+        "correct":"Stefan Nemanja"
+    }
+
+]

@@ -22,16 +22,17 @@ loginBtn.onclick = () => {
 /* Rules Page */
 
 var startBtn = document.getElementById("start");
+var quizDiv = document.getElementById("quiz");
 
 startBtn.onclick = () => {
     var rulesDiv = document.getElementById("rules");
-    var quizDiv = document.getElementById("quiz");
     rulesDiv.style.display = "none";
     quizDiv.style.display = "block";
 }
 
 
 /* Quiz Page */
+
 
 
 
