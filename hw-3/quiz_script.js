@@ -31,9 +31,22 @@ startBtn.onclick = () => {
     rulesDiv.style.display = "none";
     quizDiv.style.display = "block";
 
-    setInterval(betweenCountdown, 1000);
-    setInterval(changeTimerColorRed, 500);
-    setInterval(changeTimerColorWhite, 1000);  
+    var tmp = 0;
+    function countToFive(){
+        tmp++;
+        if(tmp == 7){
+            clearInterval(intervalOne);
+            clearInterval(intervalTwo);
+            clearInterval(intervalThree);
+            clearInterval(intervalZero);
+        }
+    }
+    var intervalZero = setInterval(countToFive, 1000);
+    var intervalOne = setInterval(betweenCountdown, 1000);
+    var intervalTwo = setInterval(changeTimerColorRed, 500);
+    var intervalThree = setInterval(changeTimerColorWhite, 1000); 
+
+
 }
 
 /* Between Page */
@@ -41,7 +54,7 @@ startBtn.onclick = () => {
 var betweenTimer = 5;
 
 function betweenCountdown(){
-
+    console.log("tajmer");
     if(betweenTimer >= 0){
         document.getElementById("timer-between").innerHTML = "0:0" + betweenTimer;
         betweenTimer--;
