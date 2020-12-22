@@ -36,8 +36,61 @@ startBtn.onclick = () => {
 var exitBtn = document.getElementById("exit");
 exitBtn.onclick = () => {
     location.reload();
-
 }
+
+var index;
+var questions;
+
+
+fetch('questions.json').then(function (response) {
+    return response.json();
+  
+  }).then(function (obj) {
+      questions = obj;
+  });
+
+
+var cnt = 0;
+function pickQuestion(){
+
+    if(cnt < 10){
+        index = Math.round(Math.random() * 29);
+        if(questions[index].flag){
+            displayQuestion(questions[index]);
+            questions[index].flag = false;
+            cnt++;
+        }
+        else{
+            while(!questions[index].flag){
+                index = Math.round(Math.random() * 29);
+            }
+            displayQuestion(questions[index]);
+            questions[index].flag = false;
+            cnt++;
+        }
+    }
+}
+
+function displayQuestion(object){
+    var Q = document.getElementById("Q");
+    var A = document.getElementById("A");
+    var B = document.getElementById("B");
+    var C = document.getElementById("C");
+    var D = document.getElementById("D");
+
+    Q.innerHTML = object.question;
+    A.innerHTML = object.A;
+    B.innerHTML = object.B;  
+    C.innerHTML = object.C;  
+    D.innerHTML = object.D;    
+}
+
+var nextBtn = document.getElementById("next");
+nextBtn.onclick = () => {
+    pickQuestion();
+}
+
+
 
 
 
