@@ -1,5 +1,5 @@
 
-/* Login Page */
+/* LOG IN PAGE */
 
 var loginDiv = document.getElementById("login");
 var loginBtn = document.getElementById("submit");
@@ -19,7 +19,7 @@ loginBtn.onclick = () => {
     }
 }
 
-/* Rules Page */
+/* RULES PAGE */
 
 var startBtn = document.getElementById("start");
 var quizDiv = document.getElementById("quiz");
@@ -50,7 +50,7 @@ startBtn.onclick = () => {
 
 }
 
-/* Between Page */
+/* BETWEEN PAGE */
 
 var betweenTimer = 5;
 
@@ -85,7 +85,7 @@ function changeTimerColorWhite(){
 }
 
 
-/* Quiz Page */
+/* QUIZ PAGE */
 
 
 var exitBtn = document.getElementById("exit");
@@ -152,7 +152,7 @@ aBtn.onclick = () => {
         displayIncorrect(aBtn);
         disableButtons();
     }
-    setTimeout(pickQuestion, 3000);
+    setTimeout(pickQuestion, 2000);
 }
 
 aBtn.onmouseover = () => {
@@ -176,7 +176,7 @@ bBtn.onclick = () => {
         displayIncorrect(bBtn);
         disableButtons();
     }
-    setTimeout(pickQuestion, 3000);
+    setTimeout(pickQuestion, 2000);
 }
 
 bBtn.onmouseover = () => {
@@ -200,7 +200,7 @@ cBtn.onclick = () => {
         displayIncorrect(cBtn);
         disableButtons();
     }
-    setTimeout(pickQuestion, 3000);
+    setTimeout(pickQuestion, 2000);
 }
 
 cBtn.onmouseover = () => {
@@ -224,7 +224,7 @@ dBtn.onclick = () => {
         displayIncorrect(dBtn);
         disableButtons();  
     }
-    setTimeout(pickQuestion, 3000);
+    setTimeout(pickQuestion, 2000);
 }
 
 dBtn.onmouseover = () => {
@@ -239,6 +239,7 @@ dBtn.onmouseleave = () => {
 /* Display Question function */
 
 function displayQuestion(object){
+    updateTimer();
     enableAndResetButtons();
     var Q = document.getElementById("Q");
 
@@ -248,9 +249,7 @@ function displayQuestion(object){
     cBtn.innerHTML = object.C;  
     dBtn.innerHTML = object.D;  
     correct = object.correct;
-
     document.getElementById("q-count").innerHTML = "Pitanje " + (questionNumber + 1) + "/10";
-
 }
 
 var nextBtn = document.getElementById("next");
@@ -262,6 +261,7 @@ function disableButtons(){
     for(var i = 0; i < buttonsArray.length; i++){
         buttonsArray[i].style.pointerEvents = "none";
     }
+    nextBtn.style.pointerEvents = "none";
 }
 
 function enableAndResetButtons(){
@@ -274,6 +274,7 @@ function enableAndResetButtons(){
 
         }
     }
+    nextBtn.style.pointerEvents = "all";
 }
 
 function displayCorrect(btn){
@@ -285,8 +286,38 @@ function displayIncorrect(btn){
     btn.style.opacity = 1;
 }
 
+/* Countdown Timer */
+var timer = 20;
 
+function updateTimer(){
+    timer = 20;
+    document.getElementById("timer").innerHTML = timer;
+    var intervalTimer = setInterval( function(){
+        if(clickedFlag){
+            clearInterval(intervalTimer);
+            document.getElementById("timer").innerHTML = timer;
+        }
 
+        if(timer <= 0){
+            clearInterval(intervalTimer);
+            for(var i = 0; i < buttonsArray.length; i++){
+                if(buttonsArray[i].innerHTML == correct){
+                    buttonsArray[i].style.backgroundColor = "green";
+                    buttonsArray[i].style.opacity = 0.7;
+                    disableButtons();
+                    break;
+                }
+            }
+            document.getElementById("timer").innerHTML = 0;
+            setTimeout(pickQuestion, 2000);
+        }
+
+        if(timer > 0){
+            document.getElementById("timer").innerHTML = (timer-1);
+        }
+        timer--;
+    }, 1000);
+}
 
 
 
