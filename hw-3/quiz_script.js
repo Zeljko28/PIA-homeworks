@@ -107,15 +107,15 @@ fetch('questions.json').then(function (response) {
 
 
 /* Picking random element(question) from json file */
-var cnt = 0;
+var questionNumber = 0;
 function pickQuestion(){
 
-    if(cnt < 10){
+    if(questionNumber < 10){
         index = Math.round(Math.random() * 29);
         if(questions[index].flag){
             displayQuestion(questions[index]);
             questions[index].flag = false;
-            cnt++;
+            questionNumber++;
         }
         else{
             while(!questions[index].flag){
@@ -123,7 +123,7 @@ function pickQuestion(){
             }
             displayQuestion(questions[index]);
             questions[index].flag = false;
-            cnt++;
+            questionNumber++;
         }
     }
 }
@@ -132,11 +132,13 @@ var aBtn = document.getElementById("A");
 var bBtn = document.getElementById("B");
 var cBtn = document.getElementById("C");
 var dBtn = document.getElementById("D");
+var buttonsArray = [aBtn, bBtn, cBtn, dBtn];
 var correct;
 
 /* Button functionalites */
 
 var clickedFlag = false;
+var displayedFlag = true;
 
 /* A Button Events */
 
@@ -150,6 +152,7 @@ aBtn.onclick = () => {
         displayIncorrect(aBtn);
         disableButtons();
     }
+    setTimeout(pickQuestion, 3000);
 }
 
 aBtn.onmouseover = () => {
@@ -173,6 +176,7 @@ bBtn.onclick = () => {
         displayIncorrect(bBtn);
         disableButtons();
     }
+    setTimeout(pickQuestion, 3000);
 }
 
 bBtn.onmouseover = () => {
@@ -196,6 +200,7 @@ cBtn.onclick = () => {
         displayIncorrect(cBtn);
         disableButtons();
     }
+    setTimeout(pickQuestion, 3000);
 }
 
 cBtn.onmouseover = () => {
@@ -219,6 +224,7 @@ dBtn.onclick = () => {
         displayIncorrect(dBtn);
         disableButtons();  
     }
+    setTimeout(pickQuestion, 3000);
 }
 
 dBtn.onmouseover = () => {
@@ -243,15 +249,14 @@ function displayQuestion(object){
     dBtn.innerHTML = object.D;  
     correct = object.correct;
 
+    document.getElementById("q-count").innerHTML = "Pitanje " + (questionNumber + 1) + "/10";
+
 }
 
 var nextBtn = document.getElementById("next");
 nextBtn.onclick = () => {
     pickQuestion();
 }
-
-
-var buttonsArray = [aBtn, bBtn, cBtn, dBtn];
 
 function disableButtons(){
     for(var i = 0; i < buttonsArray.length; i++){
