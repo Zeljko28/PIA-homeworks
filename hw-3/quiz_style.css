@@ -197,7 +197,6 @@ body{
     border: 2px solid black;
     pointer-events: none;
 }
-
 .quiz a:hover{
     background-color: blue;
     opacity: 1;
@@ -269,6 +268,8 @@ body{
     background-color: blue;
 }
 
+
+/* Between Page */
 .pre-quiz{
     display: none;
     text-align: center;

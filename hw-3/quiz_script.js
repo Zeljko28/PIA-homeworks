@@ -32,7 +32,7 @@ startBtn.onclick = () => {
     quizDiv.style.display = "block";
 
     var tmp = 0;
-    function countToFive(){
+    function countToSeven(){
         tmp++;
         if(tmp == 7){
             clearInterval(intervalOne);
@@ -41,7 +41,8 @@ startBtn.onclick = () => {
             clearInterval(intervalZero);
         }
     }
-    var intervalZero = setInterval(countToFive, 1000);
+    betweenCountdown();
+    var intervalZero = setInterval(countToSeven, 1000);
     var intervalOne = setInterval(betweenCountdown, 1000);
     var intervalTwo = setInterval(changeTimerColorRed, 500);
     var intervalThree = setInterval(changeTimerColorWhite, 1000); 
@@ -54,7 +55,6 @@ startBtn.onclick = () => {
 var betweenTimer = 5;
 
 function betweenCountdown(){
-    console.log("tajmer");
     if(betweenTimer >= 0){
         document.getElementById("timer-between").innerHTML = "0:0" + betweenTimer;
         betweenTimer--;
@@ -63,12 +63,9 @@ function betweenCountdown(){
         document.getElementById("between").remove();
         document.getElementById("quiz").style.opacity = 1;
         document.getElementById("quiz").style.filter = "none";
-        document.getElementById("A").style.pointerEvents = "all";
-        document.getElementById("B").style.pointerEvents = "all";
-        document.getElementById("C").style.pointerEvents = "all";
-        document.getElementById("D").style.pointerEvents = "all";
         document.getElementById("exit").style.pointerEvents = "all";
         document.getElementById("next").style.pointerEvents = "all";
+        enableAndResetButtons();
         pickQuestion();
 
         betweenTimer--;
@@ -96,6 +93,8 @@ exitBtn.onclick = () => {
     location.reload();
 }
 
+/* Fetching json file */
+
 var index;
 var questions;
 
@@ -107,6 +106,7 @@ fetch('questions.json').then(function (response) {
   });
 
 
+/* Picking random element(question) from json file */
 var cnt = 0;
 function pickQuestion(){
 
@@ -128,18 +128,121 @@ function pickQuestion(){
     }
 }
 
+var aBtn = document.getElementById("A");
+var bBtn = document.getElementById("B");
+var cBtn = document.getElementById("C");
+var dBtn = document.getElementById("D");
+var correct;
+
+/* Button functionalites */
+
+var clickedFlag = false;
+
+/* A Button Events */
+
+aBtn.onclick = () => {
+    clickedFlag = true;
+    if(aBtn.innerHTML == correct){
+        displayCorrect(aBtn);
+        disableButtons();
+    }
+    else{
+        displayIncorrect(aBtn);
+        disableButtons();
+    }
+}
+
+aBtn.onmouseover = () => {
+    aBtn.style.opacity = 1;
+}
+aBtn.onmouseleave = () => {
+    if(!clickedFlag){
+        aBtn.style.opacity = 0.6;
+    }
+}
+
+/* B Button Events */
+
+bBtn.onclick = () => {
+    clickedFlag = true;
+    if(bBtn.innerHTML == correct){
+        displayCorrect(bBtn);
+        disableButtons();
+    }
+    else{
+        displayIncorrect(bBtn);
+        disableButtons();
+    }
+}
+
+bBtn.onmouseover = () => {
+    bBtn.style.opacity = 1;
+}
+bBtn.onmouseleave = () => {
+    if(!clickedFlag){
+        bBtn.style.opacity = 0.6;
+    }
+}
+
+/* C Button Events */
+
+cBtn.onclick = () => {
+    clickedFlag = true;
+    if(cBtn.innerHTML == correct){
+        displayCorrect(cBtn);
+        disableButtons();
+    }
+    else{
+        displayIncorrect(cBtn);
+        disableButtons();
+    }
+}
+
+cBtn.onmouseover = () => {
+    cBtn.style.opacity = 1;
+}
+cBtn.onmouseleave = () => {
+    if(!clickedFlag){
+        cBtn.style.opacity = 0.6;
+    }
+}
+
+/* D Button Events */
+
+dBtn.onclick = () => {
+    clickedFlag = true;
+    if(dBtn.innerHTML == correct){
+        displayCorrect(dBtn);
+        disableButtons();
+    }
+    else{
+        displayIncorrect(dBtn);
+        disableButtons();  
+    }
+}
+
+dBtn.onmouseover = () => {
+    dBtn.style.opacity = 1;
+}
+dBtn.onmouseleave = () => {
+    if(!clickedFlag){
+        dBtn.style.opacity = 0.6;
+    }
+}
+
+/* Display Question function */
+
 function displayQuestion(object){
+    enableAndResetButtons();
     var Q = document.getElementById("Q");
-    var A = document.getElementById("A");
-    var B = document.getElementById("B");
-    var C = document.getElementById("C");
-    var D = document.getElementById("D");
 
     Q.innerHTML = object.question;
-    A.innerHTML = object.A;
-    B.innerHTML = object.B;  
-    C.innerHTML = object.C;  
-    D.innerHTML = object.D;    
+    aBtn.innerHTML = object.A;
+    bBtn.innerHTML = object.B;  
+    cBtn.innerHTML = object.C;  
+    dBtn.innerHTML = object.D;  
+    correct = object.correct;
+
 }
 
 var nextBtn = document.getElementById("next");
@@ -147,6 +250,35 @@ nextBtn.onclick = () => {
     pickQuestion();
 }
 
+
+var buttonsArray = [aBtn, bBtn, cBtn, dBtn];
+
+function disableButtons(){
+    for(var i = 0; i < buttonsArray.length; i++){
+        buttonsArray[i].style.pointerEvents = "none";
+    }
+}
+
+function enableAndResetButtons(){
+    clickedFlag = false;
+    for(var i = 0; i < buttonsArray.length; i++){
+        buttonsArray[i].style.pointerEvents = "all";
+        buttonsArray[i].style.backgroundColor = "blue";
+        if(buttonsArray[i].style.opacity == 1){
+            buttonsArray[i].style.opacity = 0.6;
+
+        }
+    }
+}
+
+function displayCorrect(btn){
+    btn.style.backgroundColor = "green";
+    btn.style.opacity = 1;
+}
+function displayIncorrect(btn){
+    btn.style.backgroundColor = "red";
+    btn.style.opacity = 1;
+}
 
 
 
