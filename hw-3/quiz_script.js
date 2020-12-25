@@ -120,6 +120,13 @@ function sortTable(){
                 tmp[k] = tmp[j];
                 tmp[j] = h;
             }
+            if(op1 == op2){
+                if(tmp[k][0] > tmp[j][0]){
+                    var h = tmp[k];
+                    tmp[k] = tmp[j];
+                    tmp[j] = h;
+                }
+            }
         }
     }
 
