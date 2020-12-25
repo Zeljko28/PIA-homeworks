@@ -259,18 +259,26 @@ body{
 
 .quiz .pre #twenty-timer{
     font-size: 20pt;
-    float: left;
+    float: right;
     color:black;
-    margin-left: 20px;
+    margin-right: 20px;
     font-family: "Candara";
+    background-color: lightgray;
+    border-radius: 4px;
+    padding: 5px;
+    border: 2px solid grey;
 }
 
 .quiz .pre #q-count{
     font-size: 20pt;
     font-family: "Candara";
-    float: right;
+    float: left;
     color:black;
-    margin-right: 20px;
+    margin-left: 20px;
+    background-color: lightgray;
+    border-radius: 4px;
+    padding: 5px;
+    border: 2px solid grey;
 }
 
 .quiz .bottom-btns #exit{
@@ -417,10 +425,13 @@ body{
     display: block;
     width: 300px;
     margin-left: 30px;
-    text-align: center;
     padding: 20px;
     margin-bottom: 15px;
     border-bottom: 2px solid lightgray;
+}
+
+.results .table h2{
+    text-align: center;
 }
 
 .results .table #table{
@@ -431,10 +442,50 @@ body{
     color: black;
 }
 
-.results .table p{
-    font-family: "Candara";
-    font-size: 17pt;
-    color: black;
+.results .players{
+    backdrop-filter: blur(5px);
+    display: flex;
+    width: 390px;
+    padding: 20px;
+    overflow: auto;
+    border: 2px solid grey;
+    border-radius: 4px;
 }
+
+.results .players #nick{
+    padding: 10px;
+    display: block;
+    border: 2px solid grey;
+    width: 50%;
+}
+
+.results .players #nick p{
+    padding-right: 10px;
+    font-family: "Candara";
+    font-size: 16pt;
+    color: black;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+
+.results .players #res{
+    padding: 10px;
+    display: block;
+    border: 2px solid grey;
+    width: 50%;
+    float: left;
+}
+
+.results .players #res p{
+    padding-right: 15px;
+    font-family: "Candara";
+    font-size: 16pt;
+    color: black;
+    font-weight: bold;
+    color: green;
+    text-align: right;
+}
+
 
 

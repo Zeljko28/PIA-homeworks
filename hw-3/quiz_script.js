@@ -149,6 +149,7 @@ function displayTable(){
 
     var id = 1;
     var temp = [];
+    var ids = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
 
     for (var i = 0; i < cookiesArray.length; i++){
         temp[i] = cookiesArray[i].split("=");
@@ -156,7 +157,8 @@ function displayTable(){
     for (var i = 0; i < temp.length; i++){
         var nick = temp[i][0];
         var res = temp[i][1];
-        document.getElementById(id).innerHTML = id + "." + " " + nick + "&emsp;" + res;
+        document.getElementById(id).innerHTML = id + "." + " " + nick;
+        document.getElementById(ids[i]).innerHTML = res;
         id++;
         
     }
