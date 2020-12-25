@@ -1,5 +1,6 @@
 [
     {   
+        "withAnswers":"true",
         "flag":"true", 
         "question":"Koje godine je bila Kosovska bitka?",
         "A":"1389.",
@@ -9,6 +10,7 @@
         "correct":"1389."
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Kako se zove najveća građevina na svetu?",
         "A":"Koloseum",
@@ -18,6 +20,7 @@
         "correct":"Kineski zid"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question": "Turski marš je komponovao:",
         "A": "Robert Šuman",
@@ -27,24 +30,19 @@
         "correct": "Volfgang Amadeus Mocart"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
-        "question":"Koja je najveća životinja na planeti?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
-        "correct":"Plavi kit"
+        "question":"Koja je najbrža životinja na planeti?",
+        "correct":"Gepard"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
         "question":"Kako se naziva nauka koja proučava pećine?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
         "correct":"Speleologija"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Koju državu je Napoleon prodao Amerikancima?",
         "A":"Portugaliju",
@@ -54,6 +52,7 @@
         "correct":"Luizijanu"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Koje je najdublje jezero na svetu?",
         "A":"Bajkalsko jezero",
@@ -63,15 +62,13 @@
         "correct":"Bajkalsko jezero"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
         "question":"Kako se zove univerzalni svetski jezik?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
         "correct":"Esperanto"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Kako se nazivaju ratovi vođeni između Rima i Kartagine?",
         "A":"Punski ratovi",
@@ -81,6 +78,7 @@
         "correct":"Punski ratovi"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Šta proučava antropologija?",
         "A":"Staru Grčku",
@@ -90,24 +88,19 @@
         "correct":"Čoveka"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
         "question":"Kako se naziva slika sa likovima i događajima iz hrišćanske religije?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
         "correct":"Ikona"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
         "question":"Kako se naziva grupa od više ostrva?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
         "correct":"Arhipelag"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Koliko grama ima u toni?",
         "A":"100 hiljada",
@@ -118,6 +111,7 @@
     },
 
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"U kom mestu je rođen Nikola Tesla?",
         "A":"Tršić",
@@ -127,6 +121,7 @@
         "correct":"Smiljan"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Koji je najveći gmizavac na svetu?",
         "A":"Krokodil",
@@ -136,33 +131,25 @@
         "correct":"Krokodil"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
         "question":"Na koliko časovnih zona je podeljena Zemlja?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
         "correct":"24"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
         "question":"Kako još nazivamo Prvi Njutnov zakon?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
         "correct":"Zakon inercije"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
         "question":"Naziv biljke koja se koristila za pisanje u starom Egiptu?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
         "correct":"Papirus"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Na kojoj temperaturi je voda najgušća?",
         "A":"+100C",
@@ -172,15 +159,13 @@
         "correct":"+4C"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
         "question":"Koja američka država ima za simbol žutu ružu?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
         "correct":"Teksas"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Ko je komponovao balet Labudovo jezero?",
         "A":"Ludvig Van Betoven",
@@ -190,6 +175,7 @@
         "correct":"Petar Iljič Čajkovski"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Kako se zove slikarska tehnika u kojoj se koristi voda za rastvaranje boja?",
         "A":"Pastel",
@@ -199,6 +185,7 @@
         "correct":"Akvarel"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Koja je najveća planeta u Sunčevom sistemu?",
         "A":"Neptun",
@@ -208,15 +195,13 @@
         "correct":"Jupiter"
     },
     {
+        "withAnswers":"false",
         "flag":"true",
         "question":"Kako se naziva glagolski oblik kojim se iskazuje zapovest?",
-        "A":"",
-        "B":"",
-        "C":"",
-        "D":"",
         "correct":"Imperativ"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Koje godine se odigrala Cerska bitka?",
         "A":"1915.",
@@ -226,6 +211,7 @@
         "correct":"1914."
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Minotaur je bio pola čovek pola...?",
         "A":"Konj",
@@ -235,6 +221,7 @@
         "correct":"Bik"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Koji je najveći grad na svetu po broju stanovnika?",
         "A":"Mumbaj",
@@ -244,6 +231,7 @@
         "correct":"Tokio"
     },
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Planinama se nazivaju uzvišenja iznad koliko metara nadmorske visine?",
         "A":"500m",
@@ -253,6 +241,7 @@
         "correct":"500m"
     }, 
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Koja je najduža srpska reka?",
         "A":"Sava",
@@ -262,6 +251,7 @@
         "correct":"Velika Morava"
     },    
     {
+        "withAnswers":"true",
         "flag":"true",
         "question":"Ko je osnovao prvu srpsku državu?",
         "A":"Stefan Prvovenčani",

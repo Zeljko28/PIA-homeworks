@@ -5,13 +5,18 @@ var loginDiv = document.getElementById("login");
 var loginBtn = document.getElementById("submit");
 var nameValue;
 
+var questionFormDiv;
+var answerOneDiv;
+var answerTwoDiv;
+
 loginBtn.onclick = () => {
+
     var rulesDiv = document.getElementById("rules");
     nameValue = document.getElementById("input").value;
     var text = nameValue.split(" ").join("");
 
     if(text == ""){
-        document.getElementById("warn").innerHTML = "Niste uneli ime!"
+        document.getElementById("warn").innerHTML = "Niste uneli ime!";
     }
     else{
         loginDiv.style.display = "none";
@@ -65,8 +70,7 @@ function betweenCountdown(){
         document.getElementById("quiz").style.filter = "none";
         document.getElementById("exit").style.pointerEvents = "all";
         document.getElementById("next").style.pointerEvents = "all";
-        enableAndResetButtons();
-        pickQuestion();
+        setTimeout(pickQuestion, 500);
 
         betweenTimer--;
     }
@@ -101,12 +105,20 @@ exitBtn.onclick = () => {
 var index;
 var questions;
 
-fetch('questions.json').then(function (response) {
-    return response.json();
-  
-  }).then(function (obj) {
-      questions = obj;
-  });
+function load(){
+    fetch('questions.json').then(function (response) {
+        return response.json();
+    
+    }).then(function (obj) {
+        questions = obj;
+    });
+
+
+    questionFormDiv = document.getElementById("question-form");
+    answerOneDiv = document.getElementById("answers-one");
+    answerTwoDiv = document.getElementById("answers-two");
+
+}
 
 
 /* Picking random element(question) from json file */
@@ -114,22 +126,36 @@ var questionNumber = 0;
 function pickQuestion(){
 
     if(questionNumber < 10){
+
         index = Math.round(Math.random() * 29);
-        if(questions[index].flag){
-            displayQuestion(questions[index]);
+        while(!questions[index].flag){
+            index = Math.round(Math.random() * 29);
+        }
+        var withAns = questions[index].withAnswers;
+        
+        if(withAns == "true"){
+            setTimeout(displayQuestionWithAnswers(questions[index]), 500);
             questions[index].flag = false;
             questionNumber++;
         }
         else{
-            while(!questions[index].flag){
-                index = Math.round(Math.random() * 29);
-            }
-            displayQuestion(questions[index]);
+            setTimeout(displayQuestionWithNoAnswers(questions[index]), 500);
             questions[index].flag = false;
             questionNumber++;
         }
     }
+
+    else{
+        
+        clickedFlag = true;
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("results").style.display = "block";
+        document.getElementById("score").innerHTML = score;
+        
+    }
+
 }
+
 
 var aBtn = document.getElementById("A");
 var bBtn = document.getElementById("B");
@@ -244,9 +270,35 @@ dBtn.onmouseleave = () => {
     }
 }
 
+
+var submitAnswerBtn = document.getElementById("answer-submit");
+submitAnswerBtn.onclick = () => {
+    clickedFlag = true;
+    if(document.getElementById("input-question").value == correct){
+        submitAnswerBtn.style.backgroundColor = "green";
+        submitAnswerBtn.innerHTML = "Tačno!";
+        submitAnswerBtn.style.pointerEvents = "none";
+        nextBtn.style.pointerEvents = "none";
+        score++;
+    }
+    else{
+        submitAnswerBtn.style.backgroundColor = "red";
+        submitAnswerBtn.innerHTML = "Netačno!";
+        submitAnswerBtn.style.pointerEvents = "none";
+        nextBtn.style.pointerEvents = "none";
+    }
+    setTimeout(pickQuestion, 2000);
+}
+
+
 /* Display Question function */
 
-function displayQuestion(object){
+function displayQuestionWithAnswers(object){
+    
+    questionFormDiv.style.display = "none";
+    answerOneDiv.style.display = "block";
+    answerTwoDiv.style.display = "block";
+    
     enableAndResetButtons();
     updateTimer();
     var Q = document.getElementById("Q");
@@ -257,8 +309,33 @@ function displayQuestion(object){
     cBtn.innerHTML = object.C;  
     dBtn.innerHTML = object.D;  
     correct = object.correct;
+
     document.getElementById("q-count").innerHTML = "Pitanje " + (questionNumber + 1) + "/10";
 }
+
+function displayQuestionWithNoAnswers(object){
+
+    questionFormDiv.style.display = "block";
+    answerOneDiv.style.display = "none";
+    answerTwoDiv.style.display = "none";
+
+    clickedFlag = false;
+    document.getElementById("next").style.pointerEvents = "all";
+    submitAnswerBtn.style.pointerEvents = "all";
+    submitAnswerBtn.style.backgroundColor = "blue";
+    submitAnswerBtn.innerHTML = "Potvrdi odgovor";
+
+    document.getElementById("input-question").value = "";
+
+    updateTimer();
+    var Q = document.getElementById("Q");
+    Q.innerHTML = object.question;
+    correct = object.correct;
+
+    document.getElementById("q-count").innerHTML = "Pitanje " + (questionNumber + 1) + "/10";
+}
+
+
 
 var nextBtn = document.getElementById("next");
 nextBtn.onclick = () => {
@@ -337,7 +414,6 @@ function updateTimer(){
             document.getElementById("timer").innerHTML = (timer-1);
         }
         timer--;
-        console.log("radi i dalje");
     }, 1000);
 }
 
