@@ -325,7 +325,7 @@ body{
     width: 50%;
     margin-left: 25%;
     border: 3px solid red;
-    margin-top: 60px;
+    margin-top: 40px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
 }
@@ -413,23 +413,28 @@ body{
     background-color: blue;
 }
 
-/*.results .table{
+.results .table{
     display: block;
     width: 300px;
     margin-left: 30px;
     text-align: center;
     padding: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid lightgray;
 }
 
 .results .table #table{
     font-family: "Candara";
     font-weight: bold;
     font-size: 25pt;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     color: black;
-    border-bottom: 2px solid transparent;
+}
 
-}*/
+.results .table p{
+    font-family: "Candara";
+    font-size: 17pt;
+    color: black;
+}
 
 

@@ -9,6 +9,18 @@ var questionFormDiv;
 var answerOneDiv;
 var answerTwoDiv;
 
+var cookies = document.cookie;
+var cookiesArray = cookies.split(";");
+
+function setCookie(name, value){
+    //if(cookiesArray.length < 10){
+        document.cookie = name + "=" + value;
+        cookies = document.cookie;
+        cookiesArray = cookies.split(";");
+    //}
+}
+
+
 loginBtn.onclick = () => {
 
     var rulesDiv = document.getElementById("rules");
@@ -91,6 +103,59 @@ function changeTimerColorWhite(){
 
 /* QUIZ PAGE */
 
+function sortTable(){
+
+    var tmp = [];
+    for(var i = 0; i < cookiesArray.length; i++){
+        tmp[i] = cookiesArray[i].split("=");
+    }
+    var op1;
+    var op2;
+    for(var j = 0; j < tmp.length; j++){
+        for(var k = 0; k < tmp.length; k++){
+            op1 = parseInt(tmp[k][1]);
+            op2 = parseInt(tmp[j][1]);
+            if(op1 < op2){
+                var h = tmp[k];
+                tmp[k] = tmp[j];
+                tmp[j] = h;
+            }
+        }
+    }
+
+    cookiesArray = tmp;
+    if(tmp.length > 10){
+        var temp = cookiesArray[cookiesArray.length-1];
+        var lastCookieName = temp[0];
+        document.cookie = lastCookieName + "=;" + " expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        tmp.length = 10;
+        cookiesArray.length = 10;
+    }
+    
+    for(var i = 0; i < cookiesArray.length; i++){
+        tmp[i] = cookiesArray[i].join("=");
+    }
+
+}
+
+function displayTable(){
+
+    var id = 1;
+    var temp = [];
+
+    for (var i = 0; i < cookiesArray.length; i++){
+        temp[i] = cookiesArray[i].split("=");
+    }
+    for (var i = 0; i < temp.length; i++){
+        var nick = temp[i][0];
+        var res = temp[i][1];
+        document.getElementById(id).innerHTML = id + "." + " " + nick + "&emsp;" + res;
+        id++;
+        
+    }
+
+}
+
 
 var exitBtn = document.getElementById("exit");
 exitBtn.onclick = () => {
@@ -98,6 +163,9 @@ exitBtn.onclick = () => {
     document.getElementById("quiz").style.display = "none";
     document.getElementById("results").style.display = "block";
     document.getElementById("score").innerHTML = score;
+    setCookie(nameValue, score);
+    sortTable();
+    displayTable();
 }
 
 /* Fetching json file */
@@ -151,6 +219,9 @@ function pickQuestion(){
         document.getElementById("quiz").style.display = "none";
         document.getElementById("results").style.display = "block";
         document.getElementById("score").innerHTML = score;
+        setCookie(nameValue, score);
+        sortTable();
+        displayTable();
         
     }
 
@@ -274,7 +345,10 @@ dBtn.onmouseleave = () => {
 var submitAnswerBtn = document.getElementById("answer-submit");
 submitAnswerBtn.onclick = () => {
     clickedFlag = true;
-    if(document.getElementById("input-question").value == correct){
+    var inpt = document.getElementById("input-question").value + "";
+    var crr = correct + "";
+
+    if(inpt.toLowerCase() == crr.toLowerCase()){
         submitAnswerBtn.style.backgroundColor = "green";
         submitAnswerBtn.innerHTML = "Tačno!";
         submitAnswerBtn.style.pointerEvents = "none";
