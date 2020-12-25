@@ -121,7 +121,9 @@ function sortTable(){
                 tmp[j] = h;
             }
             if(op1 == op2){
-                if(tmp[k][0] > tmp[j][0]){
+                var x1 = tmp[k][0];
+                var x2 = tmp[j][0];
+                if(x1.toLowerCase() > x2.toLowerCase()){
                     var h = tmp[k];
                     tmp[k] = tmp[j];
                     tmp[j] = h;
