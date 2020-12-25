@@ -299,3 +299,90 @@ body{
     font-family: "Candara";
     padding: 10px;
 }
+
+/* Results page */
+
+.results{
+    display: none;
+    width: 400px;
+    background-image: url('images/lines.jpg');
+    background-size: cover;
+    border-radius: 5px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+.results .header{
+    text-align: center;
+    border-bottom: 2px solid lightgray;
+}
+
+.results .header h2{
+    font-family: "Candara";
+    font-weight: bold;
+    font-size: 27pt;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.results .score{
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 20px;
+}
+
+.results .score #para{
+    font-family: "Candara";
+    font-weight: bold;
+    font-size: 20pt;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.results .score #score{
+    font-family: "Candara";
+    font-weight: bold;
+    font-size: 30pt;
+    color: green;
+}
+
+.results .score #restart{
+    text-decoration: none;
+    display: block;
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+    font-size: 15pt;
+    font-family: "Candara";
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.results .score #restart:hover{
+    background-color: blue;
+}
+
+/*.results .table{
+    display: block;
+    width: 300px;
+    margin-left: 30px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.results .table #table{
+    font-family: "Candara";
+    font-weight: bold;
+    font-size: 25pt;
+    margin-bottom: 30px;
+    color: black;
+    border-bottom: 2px solid transparent;
+
+}*/
+
+

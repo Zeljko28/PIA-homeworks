@@ -90,7 +90,10 @@ function changeTimerColorWhite(){
 
 var exitBtn = document.getElementById("exit");
 exitBtn.onclick = () => {
-    location.reload();
+    clickedFlag = true;
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("results").style.display = "block";
+    document.getElementById("score").innerHTML = score;
 }
 
 /* Fetching json file */
@@ -140,6 +143,7 @@ var correct;
 var clickedFlag = false;
 var displayedFlag = true;
 
+var score = 0;
 /* A Button Events */
 
 aBtn.onclick = () => {
@@ -147,6 +151,7 @@ aBtn.onclick = () => {
     if(aBtn.innerHTML == correct){
         displayCorrect(aBtn);
         disableButtons();
+        score++;
     }
     else{
         displayIncorrect(aBtn);
@@ -171,6 +176,7 @@ bBtn.onclick = () => {
     if(bBtn.innerHTML == correct){
         displayCorrect(bBtn);
         disableButtons();
+        score++;
     }
     else{
         displayIncorrect(bBtn);
@@ -195,6 +201,7 @@ cBtn.onclick = () => {
     if(cBtn.innerHTML == correct){
         displayCorrect(cBtn);
         disableButtons();
+        score++;
     }
     else{
         displayIncorrect(cBtn);
@@ -219,6 +226,7 @@ dBtn.onclick = () => {
     if(dBtn.innerHTML == correct){
         displayCorrect(dBtn);
         disableButtons();
+        score++;
     }
     else{
         displayIncorrect(dBtn);
@@ -239,8 +247,8 @@ dBtn.onmouseleave = () => {
 /* Display Question function */
 
 function displayQuestion(object){
-    updateTimer();
     enableAndResetButtons();
+    updateTimer();
     var Q = document.getElementById("Q");
 
     Q.innerHTML = object.question;
@@ -254,7 +262,17 @@ function displayQuestion(object){
 
 var nextBtn = document.getElementById("next");
 nextBtn.onclick = () => {
-    pickQuestion();
+    clickedFlag = true;
+    for(var i = 0; i < buttonsArray.length; i++){
+        if(buttonsArray[i].innerHTML == correct){
+            buttonsArray[i].style.backgroundColor = "green";
+            buttonsArray[i].style.opacity = 0.6;
+            disableButtons();
+            break;
+        }
+    }
+    document.getElementById("timer").innerHTML = timer;
+    setTimeout(pickQuestion, 2000);
 }
 
 function disableButtons(){
@@ -277,9 +295,12 @@ function enableAndResetButtons(){
     nextBtn.style.pointerEvents = "all";
 }
 
+
+
 function displayCorrect(btn){
     btn.style.backgroundColor = "green";
     btn.style.opacity = 1;
+    
 }
 function displayIncorrect(btn){
     btn.style.backgroundColor = "red";
@@ -303,7 +324,7 @@ function updateTimer(){
             for(var i = 0; i < buttonsArray.length; i++){
                 if(buttonsArray[i].innerHTML == correct){
                     buttonsArray[i].style.backgroundColor = "green";
-                    buttonsArray[i].style.opacity = 0.7;
+                    buttonsArray[i].style.opacity = 0.6;
                     disableButtons();
                     break;
                 }
@@ -316,9 +337,15 @@ function updateTimer(){
             document.getElementById("timer").innerHTML = (timer-1);
         }
         timer--;
+        console.log("radi i dalje");
     }, 1000);
 }
 
 
+/* RESULTS PAGE */
 
+var restartBtn = document.getElementById("restart");
+restartBtn.onclick = () => {
+    window.location.reload();
+} 
 
