@@ -1,0 +1,129 @@
+/* purple rgb 145 71 255 */
+
+/* Sign in page */
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #e3e2dd;
+}
+
+.login{
+    display: block;
+    width: 80%;
+    padding: 30px 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: white;
+}
+.login .red{
+    border: 2px solid #e3e2dd;
+}
+
+
+.login .red .left{
+    display: block;
+    padding: 4%;
+    border-right:1px solid #e3e2dd;
+    border-left: 1px solid #e3e2dd;
+    border-top: 2px solid #e3e2dd;
+}
+
+.login .red .left h2{
+    margin-bottom: 40px;
+    font-family: "Candara";
+    font-weight: bold;
+}
+.login .red .left #lbl-username, .login .red .left #lbl-password{
+    font-family: Candara; 
+    font-size: 12pt;
+}
+
+.login .red .left #username, .login .red .left #password{
+    width: 100%;
+    margin-bottom: 20px;
+}   
+
+.login .red .left #log{
+    display: block;
+    text-align: center;
+    font-size: 15pt;
+    font-family: "Candara";
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    color: grey;
+    padding: 9px;
+    width: 100%;
+    border: 2px solid grey;
+    border-radius: 3px;
+}
+
+.login .red .left #log:hover{
+    background-color: rgb(145, 71, 255);
+    border: 2px solid rgb(145, 71, 255);
+    color: white;
+}
+
+.login .red .left #reg{
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+    font-size: 15pt;
+    font-family: "Candara";
+    font-weight: bold;
+    text-decoration: none;
+    background-color: rgb(145, 71, 255);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.login .red .right{
+    display: block;
+    padding: 4%;
+    border-top:2px solid #e3e2dd;
+}
+
+.login .red .right h2{
+    margin-bottom: 40px;
+    font-family: "Candara";
+    font-weight: bold;
+}
+
+.login .red .right h4{
+    font-family: "Candara";
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login .red .right p{
+    font-family: "Candara";
+    font-size: 12pt;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* Sign up page */
+
+.signup{
+    display: none;
+    border: 3px solid red;
+    width: 340px;
+    padding: 20px;
+    margin-top: 150px;
+}
+
+.signup h2{
+    margin-bottom: 40px;
+}
+
+.signup #name, .signup #surname, .signup #email, .signup #new-username, .signup #new-password{
+    width: 300px;
+    margin-bottom: 20px;
+}
