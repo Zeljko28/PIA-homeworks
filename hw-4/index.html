@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <div class="container login">
+        <div id="sign-in" class="container login">
             <div class="row red">
                 <div class="col-md-6 left">
                     <h2>Ulogujte se</h2>
@@ -21,11 +21,9 @@
                     <label id="lbl-password">Lozinka</label>
                     <input id="password" class="form-control" type="text" autocomplete="off">
 
-                    <a id="log" href="#">Prijavite se</a>
+                    <a id="log" href="javascript:void(0)">Prijavite se</a>
                     <hr>
-                    <a id="reg" href="#">Napravite nalog</a>
-                    
-
+                    <a id="reg" href="javascript:void(0)">Napravite nalog</a>
                 </div>
 
  
@@ -46,26 +44,35 @@
             </div>
         </div>
 
-        <div class="container signup">
+        <div id="sign-up" class="container signup">
 
-            <h2>Registracija</h2>
+            
+                <h2>Registracija</h2>
 
-            <label id="lbl-name">Unesite ime</label>
-            <input id="name" class="form-control" type="text" autocomplete="off">
+                <label id="lbl-name">Unesite ime</label>
+                <input id="name" class="form-control" type="text" autocomplete="off">
 
-            <label id="lbl-surname">Unesite prezime</label>
-            <input id="surname" class="form-control" type="text" autocomplete="off">
+                <label id="lbl-surname">Unesite prezime</label>
+                <input id="surname" class="form-control" type="text" autocomplete="off">
 
-            <label id="lbl-email">Email</label>
-            <input id="email" class="form-control" type="text" autocomplete="off">
+                <label id="lbl-email">Email</label>
+                <input id="email" class="form-control" type="text" autocomplete="off">
 
-            <label id="lbl-new-username">Korisničko ime</label>
-            <input id="new-username" class="form-control" type="text" autocomplete="off">
+                <label id="lbl-new-username">Korisničko ime</label>
+                <input id="new-username" class="form-control" type="text" autocomplete="off">
 
-            <label id="lbl-new-password">Lozinka</label>
-            <input id="new-password" class="form-control" type="text" autocomplete="off">
+                <label id="lbl-new-password">Lozinka</label>
+                <input id="new-password" class="form-control" type="text" autocomplete="off">
 
+                <a id="submit" href="javascript:void(0)">Potvrdi</a>
+
+                <p>Već imate nalog? <a id="back" href="javascript:void(0)">Prijavite se</a></p>
+            
         </div>
+
+
+
+        <script src="script.js"></script>
 
     </body>
 
