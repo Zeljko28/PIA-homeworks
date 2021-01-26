@@ -124,6 +124,14 @@ body{
     border-radius: 5px;
 }
 
+.signup .logo{
+    padding-left: 100px;
+}
+
+.signup #logo{
+    width: 65%;
+}
+
 
 .signup h2{
     margin-bottom: 40px;
