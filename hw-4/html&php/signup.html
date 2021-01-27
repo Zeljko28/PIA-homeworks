@@ -18,22 +18,24 @@
 
             <h2>Registracija</h2>
 
-            <label id="lbl-name">Unesite ime</label>
-            <input id="name" class="form-control" type="text" autocomplete="off">
+            <form>
+                <label id="lbl-name">Unesite ime</label>
+                <input name="name" id="name" class="form-control" type="text" autocomplete="off">
 
-            <label id="lbl-surname">Unesite prezime</label>
-            <input id="surname" class="form-control" type="text" autocomplete="off">
+                <label id="lbl-surname">Unesite prezime</label>
+                <input name="last-name" id="surname" class="form-control" type="text" autocomplete="off">
 
-            <label id="lbl-email">Email</label>
-            <input id="email" class="form-control" type="text" autocomplete="off">
+                <label id="lbl-email">Email</label>
+                <input name="email" id="email" class="form-control" type="text" autocomplete="off">
 
-            <label id="lbl-new-username">Korisničko ime</label>
-            <input id="new-username" class="form-control" type="text" autocomplete="off">
+                <label id="lbl-new-username">Korisničko ime</label>
+                <input name="new-username" id="new-username" class="form-control" type="text" autocomplete="off">
 
-            <label id="lbl-new-password">Lozinka</label>
-            <input type="password" id="new-password" class="form-control" type="text" autocomplete="off">
+                <label id="lbl-new-password">Lozinka</label>
+                <input name="new-password" type="password" id="new-password" class="form-control" autocomplete="off">
 
-            <a id="submit" href="#">Potvrdi</a>
+                <button id="submit" name="submit" type="submit">Potvrdi</button>
+            </form>
 
             <p>Već imate nalog? <a id="back" href="login.html">Prijavite se</a></p>
             

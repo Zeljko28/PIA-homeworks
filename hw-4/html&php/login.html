@@ -16,13 +16,15 @@
                 <div class="col-md-6 left">
                     <h2>Ulogujte se</h2>
                     
-                    <label id="lbl-username" >Korisničko ime ili email adresa</label>
-                    <input id="username" class="form-control" type="text" autocomplete="off">
+                    <form>
+                        <label id="lbl-username" >Korisničko ime ili email adresa</label>
+                        <input name="username" id="username" class="form-control" type="text" autocomplete="off">
 
-                    <label id="lbl-password">Lozinka</label>
-                    <input type="password" id="password" class="form-control" type="text" autocomplete="off">
+                        <label id="lbl-password">Lozinka</label>
+                        <input name="password" type="password" id="password" class="form-control" type="text" autocomplete="off">
 
-                    <a id="log" href="javascript:void(0)">Prijavite se</a>
+                        <button id="log" name="submit" type="submit">Prijavite se</button>
+                    </form>
                     <hr>
                     <a id="reg" href="signup.html">Napravite nalog</a>
                 </div>
