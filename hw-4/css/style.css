@@ -1,0 +1,179 @@
+/*
+
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    box-sizing: border-box;
+}*/
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+.navigation-bar{
+    
+    height: 70px;
+    background-color: #222222;
+}
+
+.navigation-bar .box .logo{
+    width: 15%;
+    height: 70px;
+    line-height: 60px;
+    float: left;
+}
+
+
+.navigation-bar .box .logo a{
+    text-decoration: none;
+}
+
+.navigation-bar .box .logo a span{
+    font-family: "Impact";
+    background-color: rgb(145, 71, 255);
+    color: black;
+    font-size: 17pt;
+    padding: 8px;
+    border-radius: 5px;
+    margin-left: 20px;  
+}
+
+.navigation-bar .input{
+    float: left;
+    height: 70px;
+    line-height: 60px;
+    width: 35%;
+}
+
+.navigation-bar .input a{
+    text-decoration: none;
+    font-size: 15pt;
+    font-family: "Candara";
+    color: rgb(145, 71, 255);
+    border-radius: 5px;
+    background-color: white;
+    padding: 7px;
+    border: 2px solid rgb(145, 71, 255);
+}
+
+.navigation-bar .input a:hover{
+    background-color: rgb(145, 71, 255);
+    color: white;
+}
+
+
+.navigation-bar .input input{
+    margin-left: 10px;
+    margin-top: -5px;
+    line-height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Candara";
+    font-size: 15pt;
+    outline: none;
+}
+
+.navigation-bar .links{
+    text-align: right;
+    float: left;
+    width: 50%;
+    height: 70px;
+    line-height: 60px;
+}
+
+.navigation-bar .links a{
+    text-decoration: none;
+    font-size: 15pt;
+    font-family: "Candara";
+    color: white;
+    margin-right: 20px;
+    padding: 9px;
+    border-radius: 5px;
+}
+
+.navigation-bar .links a:hover, .navigation-bar .links a.active{
+    background-color: rgba(211, 211, 211, 0.2);
+}
+
+.navigation-bar .btn{
+    float: left;
+    display: none;
+    height: 70px;
+    line-height: 60px;
+    cursor: default;
+}
+
+
+.navigation-bar .btn span{
+    display: none;
+    color: white;
+    border-radius: 3px;
+    font-size: 15pt;
+    padding: 9px;
+    border: 2px solid white;
+    margin-top: 2px;
+    width: 40px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1050px){
+    .navigation-bar .links{
+        z-index: -1;
+        position: fixed;
+        top: -290px;
+        right: 0;
+        width: 100%;
+        background: #222222;
+        display: inline-block;
+        transition: top .4s;
+    }
+
+    .navigation-bar .box .show {
+        top: 70px;
+    }
+
+    .navigation-bar .box .links{
+        text-align: center;
+    }
+
+    .navigation-bar .box .links a{
+        font-size: 12pt;
+    }
+
+    .navigation-bar .btn{
+        display: block;
+        width: 40%;
+        text-align: right;
+    }
+
+    .navigation-bar .btn span{
+        display: block;
+    }
+
+    .navigation-bar .input input{
+        width: 200px;
+    }
+
+    .navigation-bar .box .logo{
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .navigation-bar .box .logo{
+        width: 22%;
+    }
+
+    .navigation-bar .input{
+        width: 64%;
+    }
+    .navigation-bar .btn{
+        width:14%;
+    }
+}
