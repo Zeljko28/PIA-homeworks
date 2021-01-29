@@ -4,6 +4,8 @@
     odnosno preko buttona za registraciju, a ne kucanjem adrese u browser.
     Ako nije stranica se reload-uje*/
 
+    $error = "";
+
     if(isset($_POST["submit"])){
         
         $firstName = $_POST["first-name"];
@@ -19,6 +21,28 @@
 
         if(emptySignupInput($firstName, $lastName, $email, $username, $password) == true){
             header("Location: ../signup.php");
+            $error = "Niste popunili sva polja!";
+            exit();
+        }
+
+        if(invalidName($firstName) == true){
+            header("Location: ../signup.php");
+            exit();
+        }
+
+        if(invalidLastName($lastName) == true){
+            header("Location: ../signup.php");
+            exit();
+        }
+
+        /*if(invalidEmail($email) == true){
+            header("Location: ../signup.php");
+            exit();
+        }*/
+
+        if(usernameExist($username) == true){
+            header("Location: ../login.php");
+            exit();
         }
 
         addUser($conn, $firstName, $lastName, $email, $username, $password, $privileges);
