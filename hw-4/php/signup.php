@@ -18,9 +18,9 @@
 
             <h2>Registracija</h2>
 
-            <form>
+            <form action="../libraries/signup_lib.php" method="post">
                 <label id="lbl-name">Unesite ime</label>
-                <input name="name" id="name" class="form-control" type="text" autocomplete="off">
+                <input name="first-name" id="name" class="form-control" type="text" autocomplete="off">
 
                 <label id="lbl-surname">Unesite prezime</label>
                 <input name="last-name" id="surname" class="form-control" type="text" autocomplete="off">
