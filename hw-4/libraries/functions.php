@@ -53,3 +53,17 @@
 
         mysqli_query($conn, $data);
     }   
+
+
+
+    //Login functions
+
+
+    function emptyLoginInput($username, $password){
+        if(empty($username) || empty($password)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }

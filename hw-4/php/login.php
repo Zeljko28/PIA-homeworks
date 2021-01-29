@@ -16,7 +16,7 @@
                 <div class="col-md-6 left">
                     <h2>Ulogujte se</h2>
                     
-                    <form>
+                    <form action="../libraries/login_lib.php" method="post">
                         <label id="lbl-username" >Korisničko ime ili email adresa</label>
                         <input name="username" id="username" class="form-control" type="text" autocomplete="off">
 
