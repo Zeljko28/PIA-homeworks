@@ -18,6 +18,37 @@
 
             <h2>Registracija</h2>
 
+            <?php
+
+            /*
+                Greske pri registraciji(prazan input, nepravilno uneto ime, prezime, email...)
+                se prikazuju u paragrafu koji je sakriven, odnosno prikazuje se kad se izvrsi ovaj
+                php kod. Greske implementirane preko URL-a koji su postavljeni
+                u signup_lib.php fajlu.
+            */
+            
+            if(isset($_GET["error"])){
+                if($_GET["error"] == "emptyInput"){
+                    echo "<p style='color:red;'>Niste popunili sva polja!</p>";
+                }
+
+                if($_GET["error"] == "invalidName"){
+                    echo "<p style='color:red;'>Ime sadrzi nedozviljene simbole!</p>";
+                }
+
+                if($_GET["error"] == "invalidLastName"){
+                    echo "<p style='color:red;'>Prezime sadrzi nedozvoljene simbole!</p>";
+                }
+
+            }
+
+
+
+
+            ?>
+
+
+
             <form action="../libraries/signup_lib.php" method="post">
                 <label id="lbl-name">Unesite ime</label>
                 <input name="first-name" id="name" class="form-control" type="text" autocomplete="off">

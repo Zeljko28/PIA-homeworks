@@ -20,30 +20,30 @@
 
 
         if(emptySignupInput($firstName, $lastName, $email, $username, $password) == true){
-            header("Location: ../signup.php");
+            header("Location: ../php/signup.php?error=emptyInput");
             $error = "Niste popunili sva polja!";
             exit();
         }
 
         if(invalidName($firstName) == true){
-            header("Location: ../signup.php");
+            header("Location: ../php/signup.php?error=invalidName");
             exit();
         }
 
         if(invalidLastName($lastName) == true){
-            header("Location: ../signup.php");
+            header("Location: ../php/signup.php?error=invalidLastName");
             exit();
         }
 
         /*if(invalidEmail($email) == true){
-            header("Location: ../signup.php");
+            header("Location: ../php/signup.php?error=invalidEmail");
             exit();
         }*/
 
-        if(usernameExist($username) == true){
-            header("Location: ../login.php");
+        /*if(usernameExist($username) == true){
+            header("Location: ../php/signup.php?error=invalidUsername");
             exit();
-        }
+        }*/
 
         addUser($conn, $firstName, $lastName, $email, $username, $password, $privileges);
 
