@@ -71,6 +71,36 @@
         }
     }
 
+    function invalidLogin($conn, $username, $password){
+        $query = mysqli_query($conn, "SELECT * FROM users");
+
+        $usernames = array();
+        $emails = array();
+        $passwords = array();
+
+        while($row = mysqli_fetch_array($query)){
+            $usernames[] = $row['usersUsername'];
+            $emails[] = $row['usersEmail'];
+            $passwords[] = $row['usersPassword'];
+        }
+        
+        $result = true;
+
+        $i = 0;
+        for($i = 0; $i < sizeof($usernames); $i++){
+            if($usernames[$i] === $username || $emails[$i] === $username){
+                if($passwords[$i] === $password){
+                    $result = false;
+                    break;
+                }
+            }
+        }
+
+        return $result;
+
+
+    }
+
 
 
 
@@ -81,7 +111,25 @@
 
     // Movies functions
 
-    function showMovies($conn_movies){
+    $moviesTitles = array();
+    $moviesSynopsis = array();
+    $moviesGenres = array();
+    $moviesScenarists = array();
+    $moviesDirectors = array();
+    $moviesProductionHouses = array();
+    $moviesActors = array();
+    $moviesYears = array();
+    $moviesImgUrl = array();
+    $moviesDurations = array();
+    $moviesNumbersOfRatings = array();
+    $moviesSumsOfRatings = array();
+
+    $numberOfRows = 0;
+    $numberOfColumns = 0;
+
+
+    /*function loadMovies($conn_movies, $numberOfColumns, $numberOfRows){
+
         $sql = "SELECT count(moviesTitle) AS total FROM movies";
         $result = mysqli_query($conn_movies, $sql);
         $values = mysqli_fetch_assoc($result);
@@ -98,14 +146,62 @@
             $numberOfColumns = $num_movies;
         }
         
-        // movies arr
+        // movies arrays
         $query = mysqli_query($conn_movies, "SELECT * FROM movies");
-        $movies = array();
-        $paths = array();
 
         while($row = mysqli_fetch_array($query)){
-            $movies[] = $row['moviesTitle'];
-            $paths[] = $row['moviesImgUrl'];
+            $moviesTitles[] = $row['moviesTitle'];
+            $moviesSynopsis = $row['moviesSynopsis'];
+            $moviesGenres = $row['moviesGenre'];
+            $moviesScenarists = $row['moviesScenarist'];
+            $moviesDirectors = $row['moviesDirector'];
+            $moviesProductionHouses = $row['moviesProductionHouse'];
+            $moviesActors = $row['moviesActors'];
+            $moviesYears = $row['moviesYear'];
+            $moviesImgPaths = $row['moviesImgUrl'];
+            $moviesDurations = $row['moviesDuration'];
+            $moviesNumbersOfRatings = $row['moviesNumberOfRatings'];
+            $moviesSumsOfRatings = $row['moviesSumOfRatings'];
+        }
+    }*/
+
+
+
+
+    function showMovies($conn_movies){
+
+        $sql = "SELECT count(moviesTitle) AS total FROM movies";
+        $result = mysqli_query($conn_movies, $sql);
+        $values = mysqli_fetch_assoc($result);
+        $num_movies = $values['total'];
+
+        $numberOfRows = $num_movies % 4;
+        $numberOfColumns = 0;
+        if($numberOfRows !== 0){
+            $numberOfRows = (int)($num_movies / 4) + 1;
+            $numberOfColumns = $num_movies;
+        }
+        else{
+            $numberOfRows = (int)($num_movies / 4);
+            $numberOfColumns = $num_movies;
+        }
+        
+        // movies arrays
+        $query = mysqli_query($conn_movies, "SELECT * FROM movies");
+
+        while($row = mysqli_fetch_array($query)){
+            $moviesTitles[] = $row['moviesTitle'];
+            $moviesSynopsis[] = $row['moviesSynopsis'];
+            $moviesGenres[] = $row['moviesGenre'];
+            $moviesScenarists[] = $row['moviesScenarist'];
+            $moviesDirectors[] = $row['moviesDirector'];
+            $moviesProductionHouses[] = $row['moviesProductionHouse'];
+            $moviesActors[] = $row['moviesActors'];
+            $moviesYears[] = $row['moviesYear'];
+            $moviesImgUrl[] = $row['moviesImgUrl'];
+            $moviesDurations[] = $row['moviesDuration'];
+            $moviesNumbersOfRatings[] = $row['moviesNumberOfRatings'];
+            $moviesSumsOfRatings[] = $row['moviesSumOfRatings'];
         }
 
         $i = 0;
@@ -120,18 +216,21 @@
             $tmp = $numberOfColumns;
         }
 
+      
 
         for ($i = 0; $i < $numberOfRows; $i++){
             echo "<div class='row'>";
             for($j = 0; $j < $tmp; $j++){
                 echo "<div class='col-md-3'>";
                     
+                    
+
                     echo "<div class='row title'>";
-                        echo "<h3>$movies[$index]</h3>";
+                        echo "<h3>$moviesTitles[$index]</h3>";
                     echo "</div>";
 
                     echo "<div class='row image'>";
-                        echo "<a href='#'><img src='$paths[$index]' alt='$movies[$index]'></a>";
+                        echo "<a href='#'><img src='$moviesImgUrl[$index]' alt='$moviesTitles[$index]'></a>";
                     echo "</div>";
                 
                 echo "</div>";

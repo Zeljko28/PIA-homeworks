@@ -112,12 +112,14 @@ body{
 }
 
 
+
+
 /* Movies part of the page */
 
 .movies{
     margin-top: 70px;
     
-    background-color: rgba(211, 211, 211, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .movies .row .col-md-3 .title{
@@ -133,7 +135,7 @@ body{
 
 .movies .row .col-md-3 h3{
     font-family: "Candara";
-    color: white;
+    color: black;
 }
 
 .movies .row .col-md-3 img{
@@ -146,13 +148,63 @@ body{
     align-items: center;
 }
 
+.footer{
+    background-color: #222222;
+    text-align: center;
+    padding: 50px;
+}
+
+.footer a{
+    font-size: 30pt;
+    padding: 20px;
+}
+
+.footer a i:hover{
+    color: rgb(145, 71, 255);
+}
+
+.footer a i {
+    color: white;
+}
+
+.footer p{
+    color: white;
+    font-family: "Candara";
+    font-size: 13pt;
+    margin-top: 30px;
+}
+
+.genres{
+    margin-top: 70px;
+    background-color: rgba(211, 211, 211, 0.2);
+}
+
+.genres .row{
+    padding: 20px;
+    text-align: center;
+    border: 2px solid rgba(211, 211, 211, 0.2);
+}
+
+.genres .row a{
+    font-family: "Candara";
+    font-size: 20pt;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.genres .row a:hover{
+    background-color: rgba(211, 211, 211, 0.2);
+}
+
 
 
 @media screen and (max-width: 1050px){
     .navigation-bar .links{
-        z-index: -1;
-        position: fixed;
-        top: -10px;
+        z-index: 2;
+        position: absolute;
+        top: -290px;
         right: 0;
         width: 100%;
         background: #222222;

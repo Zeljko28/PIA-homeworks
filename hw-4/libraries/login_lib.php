@@ -9,14 +9,25 @@
         require_once "functions.php";
 
         if(emptyLoginInput($username, $password) == true){
-            header("Location: ../php/login.php?error=emptyInput");
+            header("Location: ../html&php/login.php?error=emptyInput");
             $error = "Niste popunili sva polja!";
+            exit();
+        }
+
+        if(invalidLogin($conn, $username, $password) == true){
+            header("Location: ../html&php/login.php?error=invalidUsernameOrPassword");
+            $error = "Neispravno korisničko ime ili lozinka!";
+            exit();
+        }
+
+        else{
+            header("Location: ../html&php/index.php");
             exit();
         }
         
     }
 
     else{
-        header("Location: ../php/login.php");
+        header("Location: ../html&php/login.php");
     }
 

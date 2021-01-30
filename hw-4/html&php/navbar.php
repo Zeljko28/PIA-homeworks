@@ -10,12 +10,15 @@
         
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
 
     <body>
 
+        
         <div class="container-fluid navigation-bar">
 
             <div class="row box">
@@ -32,7 +35,7 @@
                 <div id="items" class="links">
                     <a class="active" href="#">Početna strana</a>
                     <a href="#">Top 10</a>
-                    <a href="#">Žanrovi</a>
+                    <a href="genres.php">Žanrovi</a>
                     <a href="#">Odjavite se</a>
                 </div>
 
@@ -41,17 +44,4 @@
                 </div>
 
             </div>
-
-
         </div>
-
-        <script>
-            $('.navigation-bar .box .btn span').click(function(){
-                $('.navigation-bar .box .links').toggleClass("show");
-            });
-        </script>
-
-        <script src="../js/script.js"></script>
-
-    </body>
-</html>

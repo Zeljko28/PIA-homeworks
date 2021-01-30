@@ -23,6 +23,21 @@
                         <label id="lbl-password">Lozinka</label>
                         <input name="password" type="password" id="password" class="form-control" type="text" autocomplete="off">
 
+                        <?php
+                            if(isset($_GET["error"])){
+                                if($_GET["error"] == "emptyInput"){
+                                    echo "<p style='color:red;'>Niste popunili sva polja!</p>";
+                                }
+
+                                if($_GET["error"] == "invalidUsernameOrPassword"){
+                                    echo "<p style='color:red;'>Neispravno korisničko ime ili lozinka!</p>";
+                                }
+                            }
+                        
+                        ?>
+
+
+
                         <button id="log" name="submit" type="submit">Prijavite se</button>
                     </form>
                     <hr>
