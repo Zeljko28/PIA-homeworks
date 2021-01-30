@@ -112,6 +112,41 @@ body{
 }
 
 
+/* Movies part of the page */
+
+.movies{
+    margin-top: 70px;
+    border-radius: 10px;
+    background-color: rgba(211, 211, 211, 0.2);
+}
+
+.movies .row .col-md-3 .title{
+    height: 70px;
+}
+
+.movies .row .col-md-3{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid rgba(211, 211, 211, 0.2);
+    height: 400px;
+} 
+
+.movies .row .col-md-3 h3{
+    font-family: "Candara";
+    color: white;
+}
+
+.movies .row .col-md-3 img{
+    width: 200px;
+    height: 250px;
+    border: 2px solid rgb(145, 71, 255);
+    border-radius: 10px;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 @media screen and (max-width: 1050px){
     .navigation-bar .links{
