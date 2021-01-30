@@ -128,6 +128,23 @@
     $numberOfColumns = 0;
 
 
+    $thisGenreTitles = array();
+    $thisGenreSynopsis = array();
+    $thisGenre = "";
+    $thisGenreScenarists = array();
+    $thisGenreDirectors = array();
+    $thisGenreProductionHouses = array();
+    $thisGenreActors = array();
+    $thisGenreYears = array();
+    $thisGenreImgUrl = array();
+    $thisGenreDurations = array();
+    $thisGenreNumbersOfRatings = array();
+    $thisGenreSumsOfRatings = array();
+
+    $thisGenreNumberOfRows = 0;
+    $thisGenreNumberOfColumns = 0;
+
+
     /*function loadMovies($conn_movies, $numberOfColumns, $numberOfRows){
 
         $sql = "SELECT count(moviesTitle) AS total FROM movies";
@@ -216,15 +233,11 @@
             $tmp = $numberOfColumns;
         }
 
-      
-
         for ($i = 0; $i < $numberOfRows; $i++){
             echo "<div class='row'>";
             for($j = 0; $j < $tmp; $j++){
                 echo "<div class='col-md-3'>";
                     
-                    
-
                     echo "<div class='row title'>";
                         echo "<h3>$moviesTitles[$index]</h3>";
                     echo "</div>";
@@ -245,4 +258,116 @@
             }
             echo "</div>";
         }
+    }
+
+
+    function showSpecificGenre($conn_movies, $genre){
+
+        $sql = "SELECT count(moviesTitle) AS total FROM movies";
+        $result = mysqli_query($conn_movies, $sql);
+        $values = mysqli_fetch_assoc($result);
+        $num_movies = $values['total'];
+
+        $thisGenreNumMovies = 0;
+
+        $query = mysqli_query($conn_movies, "SELECT * FROM movies");
+
+        while($row = mysqli_fetch_array($query)){
+            $moviesTitles[] = $row['moviesTitle'];
+            $moviesSynopsis[] = $row['moviesSynopsis'];
+            $moviesGenres[] = $row['moviesGenre'];
+            $moviesScenarists[] = $row['moviesScenarist'];
+            $moviesDirectors[] = $row['moviesDirector'];
+            $moviesProductionHouses[] = $row['moviesProductionHouse'];
+            $moviesActors[] = $row['moviesActors'];
+            $moviesYears[] = $row['moviesYear'];
+            $moviesImgUrl[] = $row['moviesImgUrl'];
+            $moviesDurations[] = $row['moviesDuration'];
+            $moviesNumbersOfRatings[] = $row['moviesNumberOfRatings'];
+            $moviesSumsOfRatings[] = $row['moviesSumOfRatings'];
+        }
+
+
+        $i = 0;
+        $j = 0;
+
+        for($i = 0; $i < sizeof($moviesGenres); $i++){
+            
+            if($moviesGenres[$i] == $genre){
+                $thisGenreTitles[$j] = $moviesTitles[$i];
+                $thisGenreSynopsis[$j] = $moviesSynopsis[$i];
+                $thisGenreScenarists[$j] = $moviesScenarists[$i];
+                $thisGenreDirectors[$j] = $moviesDirectors[$i];
+                $thisGenreProductionHouses[$j] = $moviesProductionHouses[$i];
+                $thisGenreActors[$j] = $moviesActors[$i];
+                $thisGenreYears[$j] = $moviesYears[$i];
+                $thisGenreImgUrl[$j] = $moviesImgUrl[$i];
+                $thisGenreDurations[$j] = $moviesDurations[$i];
+                $thisGenreNumbersOfRatings[$j] = $moviesNumbersOfRatings[$i];
+                $thisGenreSumsOfRatings[$j] = $moviesSumsOfRatings[$i];
+                $thisGenreNumMovies++;
+                $j++;
+            }
+        }
+
+        
+
+        if($thisGenreNumMovies == 0){
+            echo "<h1>Nije pronadjen nijedan rezultat.</h1>";
+            exit();
+        }
+
+
+        $thisGenreNumberOfRows = $thisGenreNumMovies % 4;
+        $thisGenreNumberOfColumns = 0;
+        if($thisGenreNumberOfRows !== 0){
+            $thisGenreNumberOfRows = (int)($thisGenreNumMovies / 4) + 1;
+            $thisGenreNumberOfColumns = $thisGenreNumMovies;
+        }
+        else{
+            $thisGenreNumberOfRows = (int)($thisGenreNumMovies / 4);
+            $thisGenreNumberOfColumns = $thisGenreNumMovies;
+        }
+
+        $i = 0;
+        $j = 0;
+        $tmp = 0;
+        $index = 0;
+
+        if($thisGenreNumberOfColumns >= 4){
+            $tmp = 4;
+        }
+        else{
+            $tmp = $thisGenreNumberOfColumns;
+        }
+
+        for ($i = 0; $i < $thisGenreNumberOfRows; $i++){
+            echo "<div class='row'>";
+            for($j = 0; $j < $tmp; $j++){
+                echo "<div class='col-md-3'>";
+                    
+                    echo "<div class='row title'>";
+                        echo "<h3>$thisGenreTitles[$index]</h3>";
+                    echo "</div>";
+
+                    echo "<div class='row image'>";
+                        echo "<a href='#'><img src='$thisGenreImgUrl[$index]' alt='$thisGenreTitles[$index]'></a>";
+                    echo "</div>";
+                
+                echo "</div>";
+                $index++;
+            }
+            $thisGenreNumberOfColumns = $thisGenreNumberOfColumns - 4;
+            if($thisGenreNumberOfColumns >= 4){
+                $tmp = 4;
+            }
+            else{
+                $tmp = $thisGenreNumberOfColumns;
+            }
+            echo "</div>";
+        }
+
+        
+
+
     }

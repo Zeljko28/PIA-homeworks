@@ -33,8 +33,8 @@
                 </div>
 
                 <div id="items" class="links">
-                    <a class="active" href="#">Početna strana</a>
-                    <a href="#">Top 10</a>
+                    <a class="active" href="index.php">Početna strana</a>
+                    
                     <a href="genres.php">Žanrovi</a>
                     <a href="#">Odjavite se</a>
                 </div>

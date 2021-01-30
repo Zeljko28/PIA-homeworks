@@ -11,47 +11,47 @@
         </div>
 
         <div class="row">
-            <a href="#">Naučna fantastika</a>
+            <a href="index.php?genre=sci-fi">Naučna fantastika</a>
         </div>
         
         <div class="row">
-            <a href="#">Horor</a>
+            <a href="index.php?genre=horror">Horor</a>
         </div>
         
         <div class="row">
-            <a href="#">Romantika</a>
+            <a href="index.php?genre=romance">Romantika</a>
         </div>
         
         <div class="row">
-            <a href="#">Akcija</a>
+            <a href="index.php?genre=action">Akcija</a>
         </div>
 
         <div class="row">
-            <a href="#">Triler</a>
+            <a href="index.php?genre=thriler">Triler</a>
         </div>
 
         <div class="row">
-            <a href="#">Drama</a>
+            <a href="index.php?genre=drama">Drama</a>
         </div>
         
         <div class="row">
-            <a href="#">Misterija</a>
+            <a href="index.php?genre=mystery">Misterija</a>
         </div>
 
         <div class="row">
-            <a href="#">Western</a>
+            <a href="index.php?genre=western">Western</a>
         </div>
 
         <div class="row">
-            <a href="#">Dokumentarni filmovi</a>
+            <a href="index.php?genre=documentary">Dokumentarni filmovi</a>
         </div>
 
         <div class="row">
-            <a href="#">Avantura</a>
+            <a href="index.php?genre=adventure">Avantura</a>
         </div>
 
         <div class="row">
-            <a href="#">Kriminalistička drama</a>
+            <a href="index.php?genre=crime">Kriminalistička drama</a>
         </div>
         
 
