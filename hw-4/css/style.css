@@ -116,7 +116,7 @@ body{
 
 .movies{
     margin-top: 70px;
-    border-radius: 10px;
+    
     background-color: rgba(211, 211, 211, 0.2);
 }
 
@@ -140,7 +140,7 @@ body{
     width: 200px;
     height: 250px;
     border: 2px solid rgb(145, 71, 255);
-    border-radius: 10px;
+    
     margin-top: 15px;
     justify-content: center;
     align-items: center;
