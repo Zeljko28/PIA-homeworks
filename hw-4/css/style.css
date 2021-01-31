@@ -1,13 +1,12 @@
 body{
     padding: 0;
     margin: 0;
-    background-color: black;
+    background-color: #e3e2dd;
 }
 
 .navigation-bar{
-    
     height: 70px;
-    background-color: #222222;
+    background-color: black;
 }
 
 .navigation-bar .box .logo{
@@ -76,7 +75,7 @@ body{
     line-height: 60px;
 }
 
-.navigation-bar .links a{
+.navigation-bar .links .link{
     text-decoration: none;
     font-size: 15pt;
     font-family: "Candara";
@@ -86,8 +85,9 @@ body{
     border-radius: 5px;
 }
 
-.navigation-bar .links a:hover, .navigation-bar .links a.active{
-    background-color: rgba(211, 211, 211, 0.2);
+.navigation-bar .box .links a:hover{
+    background-color: rgb(145, 71, 255);
+
 }
 
 .navigation-bar .btn{
@@ -118,8 +118,10 @@ body{
 
 .movies{
     margin-top: 70px;
-    
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: white;
+    border-radius: 5px;
+    border: 3px solid lightgrey;
+    box-shadow: 5px 5px 3px grey;
 }
 
 .movies .row .col-md-3 .title{
@@ -129,27 +131,33 @@ body{
 .movies .row .col-md-3{
     text-align: center;
     padding: 10px;
-    border-bottom: 2px solid rgba(211, 211, 211, 0.2);
+    border-bottom: 2px solid lightgrey;
     height: 400px;
 } 
 
 .movies .row .col-md-3 h3{
     font-family: "Candara";
     color: black;
+    font-weight: bold;
 }
 
 .movies .row .col-md-3 img{
     width: 200px;
     height: 250px;
-    border: 2px solid rgb(145, 71, 255);
     
+    border-radius: 3px;
     margin-top: 15px;
     justify-content: center;
     align-items: center;
 }
 
+.movies .row .col-md-3 img:hover{
+    transform: scale(1.2);
+    transition: 0.4s;
+}
+
 .footer{
-    background-color: #222222;
+    background-color: black;
     text-align: center;
     padding: 50px;
 }
@@ -197,6 +205,66 @@ body{
 .genres .row a:hover{
     background-color: rgba(211, 211, 211, 0.2);
 }
+
+.movie{
+    background-color: white;
+    border: 2px solid lightgrey;
+    box-shadow: 5px 5px 3px grey;
+    margin-top: 70px;
+}
+
+.movie .row{
+    padding: 40px;
+}
+
+.movie .star1, .movie .star2, .movie .star3, .movie .star4, .movie .star5{
+    font-size: 20pt;
+    margin-top: 10px;
+    color: darkgrey;
+}
+
+.movie .text{
+    margin-top: 30px;
+}
+
+
+.movie h2{
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.movie h3{
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey;
+}
+
+.movie p{
+    font-size: 13pt;
+    padding: 10px;
+    background-color: #e3e2dd;
+    border-radius: 5px;
+}
+
+.movie .row .img{
+    text-align: center;
+
+}
+
+.movie .row .img img{
+    width: 500px;
+    height: 600px;
+    border-radius: 5px;
+}
+
+.movie .row .description{
+    color: black;
+    font-family: "Candara";
+    margin-top: 60px;
+    
+}
+
 
 
 

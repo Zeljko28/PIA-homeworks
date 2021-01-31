@@ -12,6 +12,7 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
@@ -33,10 +34,10 @@
                 </div>
 
                 <div id="items" class="links">
-                    <a class="active" href="index.php">Početna strana</a>
+                    <a id="home" class="link" href="index.php">Početna strana</a>
                     
-                    <a href="genres.php">Žanrovi</a>
-                    <a href="#">Odjavite se</a>
+                    <a id="genres" class="link" href="genres.php">Žanrovi</a>
+                    <a class="link" href="#">Odjavite se</a>
                 </div>
 
                 <div class="btn">

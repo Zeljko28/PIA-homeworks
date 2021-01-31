@@ -243,7 +243,7 @@
                     echo "</div>";
 
                     echo "<div class='row image'>";
-                        echo "<a href='#'><img src='$moviesImgUrl[$index]' alt='$moviesTitles[$index]'></a>";
+                        echo "<a href='../html&php/movie.php?title=$moviesTitles[$index]'><img src='$moviesImgUrl[$index]' alt='$moviesTitles[$index]'></a>";
                     echo "</div>";
                 
                 echo "</div>";
@@ -351,7 +351,7 @@
                     echo "</div>";
 
                     echo "<div class='row image'>";
-                        echo "<a href='#'><img src='$thisGenreImgUrl[$index]' alt='$thisGenreTitles[$index]'></a>";
+                        echo "<a href='../html&php/movie.php?title=$thisGenreTitles[$index]'><img src='$thisGenreImgUrl[$index]' alt='$thisGenreTitles[$index]'></a>";
                     echo "</div>";
                 
                 echo "</div>";
@@ -366,8 +366,128 @@
             }
             echo "</div>";
         }
+    }
 
-        
 
+    function showSpecificMovie($conn_movies){
+
+        $title = $_GET["title"];
+        $synopsis = "";
+        $genre = "";
+        $scenarist = "";
+        $director = "";
+        $productionHouse = "";
+        $actors = "";
+        $year = "";
+        $imgUrl = "";
+        $duration = 0;
+        $numOfRatings = 0;
+        $sumOfRatings = 0;
+
+        $sql = "SELECT * FROM movies";
+
+        $result = $conn_movies->query($sql);
+        while($row = $result->fetch_assoc()){
+            if($row['moviesTitle'] == $title){
+                $synopsis = $row['moviesSynopsis'];
+                $genre = $row['moviesGenre'];
+                $scenarist = $row['moviesScenarist'];
+                $director = $row['moviesDirector'];
+                $productionHouse = $row['moviesProductionHouse'];
+                $actors = $row['moviesActors'];
+                $year = $row['moviesYear'];
+                $imgUrl = $row['moviesImgUrl'];
+                $duration = $row['moviesDuration'];
+                $numOfRatings = $row['moviesNumberOfRatings'];
+                $sumOfRatings = $row['moviesSumOfRatings'];
+                break;
+            }
+        }
+
+        if($numOfRatings != 0){
+            $awerage = $sumOfRatings / $numOfRatings;
+        }
+        else{
+            $awerage = 0;
+        }
+
+        $awerage = round($awerage, 2);
+
+        echo "<div class='container movie'>";
+
+        echo "<div class='row'>";
+
+            echo "<div class='col-md-6 img'>";
+                echo "<h2>$title</h2>";
+                echo "<img src='$imgUrl'>";
+                echo "<h3>Prosečna ocena: $awerage <span style='color:orange;' class='fa fa-star'></span></h3>";
+                echo "<h3 class='text'>Ocenite</h3>";
+                echo "<form id='rate' action='../libraries/rate.php' method='post'>";
+                    echo "<a href='../libraries/rate.php?stars=1&title=$title'><span id='star1' class='fa fa-star star1'></span></a>";
+                    echo "<a href='../libraries/rate.php?stars=2&title=$title'><span id='star2' class='fa fa-star star2'></span></a>";
+                    echo "<a href='../libraries/rate.php?stars=3&title=$title'><span id='star3' class='fa fa-star star3'></span></a>";
+                    echo "<a href='../libraries/rate.php?stars=4&title=$title'><span id='star4' class='fa fa-star star4'></span></a>";
+                    echo "<a href='../libraries/rate.php?stars=5&title=$title'><span id='star5' class='fa fa-star star5'></span></a>";
+                echo "</form>";
+            echo "</div>";
+
+            echo "<div class='col-md-6 description'>";
+                
+                echo "<h3>Sinopis</h3>";
+                echo "<p>$synopsis</p>";
+
+                echo "<h3>Žanr</h3>";
+                echo "<p>$genre</p>";
+                
+                echo "<h3>Scenarista</h3>";
+                echo "<p>$scenarist</p>";
+
+                echo "<h3>Režiser</h3>";
+                echo "<p>$director</p>";
+
+                echo "<h3>Producentska kuća</h3>";
+                echo "<p>$productionHouse</p>";
+
+                echo "<h3>Glumci</h3>";
+                echo "<p>$actors</p>";
+
+                echo "<h3>Godina izdanja</h3>";
+                echo "<p>$year</p>";
+
+                echo "<h3>Trajanje</h3>";
+                echo "<p>$duration minuta</p>";
+            echo "</div>";
+
+        echo "</div>";
+
+
+        echo "</div>";
 
     }
+
+
+    function updateRate($conn_movies, $title, $stars){
+        $numOfRatings = 0;
+        $sumOfRatings = 0;
+
+        $sql = "SELECT * FROM movies";
+
+        $result = $conn_movies->query($sql);
+
+        while($row = $result->fetch_assoc()){
+            if($row['moviesTitle'] == $title){
+                $numOfRatings = $row['moviesNumberOfRatings'];
+                $sumOfRatings = $row['moviesSumOfRatings'];
+                break;
+            }
+        }
+
+        $numOfRatings++;
+        $sumOfRatings = $sumOfRatings + ($stars * 2);
+
+        $sql = "UPDATE movies SET moviesNumberOfRatings='$numOfRatings', moviesSumOfRatings='$sumOfRatings' WHERE moviesTitle='$title';";
+        if(!$conn_movies->query($sql)){
+            echo "Can't connect: " . $conn_movies->error;
+        }
+    }
+
