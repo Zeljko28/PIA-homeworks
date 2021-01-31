@@ -640,8 +640,9 @@
         $j = 0;
 
         for($i = 0; $i < sizeof($moviesTitles); $i++){
-            
-            if(strpos($moviesTitles[$i], $search !== false) ){
+            $test = strtolower($moviesTitles[$i]);
+            $test2 = strtolower($search);
+            if(strpos($test, $test2) !== false){
                 $searchedTitles[$j] = $moviesTitles[$i];
                 $searchedSynopsis[$j] = $moviesSynopsis[$i];
                 $searchedScenarists[$j] = $moviesScenarists[$i];
@@ -699,7 +700,7 @@
                     echo "</div>";
 
                     echo "<div class='row image'>";
-                        echo "<a href='../html&php/movie.php?title=$searchedTitles[$index]'><img src='$thisGenreImgUrl[$index]' alt='$thisGenreTitles[$index]'></a>";
+                        echo "<a href='../html&php/movie.php?title=$searchedTitles[$index]'><img src='$searchedImgUrl[$index]' alt='$searchedTitles[$index]'></a>";
                     echo "</div>";
                 
                 echo "</div>";
