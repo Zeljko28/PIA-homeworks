@@ -97,6 +97,7 @@ star5.onmouseleave = () => {
     star4.style.cursor = "default";
     star5.style.cursor = "default";
 }
+
     
 
 

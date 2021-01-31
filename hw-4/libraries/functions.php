@@ -39,15 +39,25 @@
         }
     }
 
-    function usernameExist($username){
-        $usernames = "SELECT * FROM users WHERE usersUsername = $username;";
-        $result = mysqli_query($conn, $usernames);
-        if(mysqli_num_rows($result) > 0){
-            return true;
+    function usernameExist($conn, $username){
+        $res = false;
+        $arr = array();
+        $usernames = "SELECT * FROM users";
+        $query = mysqli_query($conn, $usernames);
+        while($row = mysqli_fetch_array($query)){
+            $arr[] = $row["usersUsername"];
         }
-        else{
-            return false;
+
+        $i = 0;
+        for($i = 0; $i < sizeof($arr); $i++){
+            if($arr[$i] == $username){
+                $res = true;
+                break;
+            }
         }
+        
+        return $res;
+        
     }
 
 
@@ -147,6 +157,23 @@
 
     $thisGenreNumberOfRows = 0;
     $thisGenreNumberOfColumns = 0;
+
+
+    $searchedTitles = array();
+    $searchedSynopsis = array();
+    $searchedGenre = array();
+    $searchedScenarists = array();
+    $searchedDirectors = array();
+    $searchedProductionHouses = array();
+    $searchedActors = array();
+    $searchedYears = array();
+    $searchedImgUrl = array();
+    $searchedDurations = array();
+    $searchedNumbersOfRatings = array();
+    $searchedSumsOfRatings = array();
+
+    $searchedNumberOfRows = 0;
+    $searchedNumberOfColumns = 0;
 
 
     /*function loadMovies($conn_movies, $numberOfColumns, $numberOfRows){
@@ -581,6 +608,113 @@
         }
     }
 
+
+
+    function showSearchedMovies($conn_movies, $search){
+
+        $sql = "SELECT count(moviesTitle) AS total FROM movies";
+        $result = mysqli_query($conn_movies, $sql);
+        $values = mysqli_fetch_assoc($result);
+        $num_movies = $values['total'];
+
+        $searchedNumMovies = 0;
+
+        $query = mysqli_query($conn_movies, "SELECT * FROM movies");
+
+        while($row = mysqli_fetch_array($query)){
+            $moviesTitles[] = $row['moviesTitle'];
+            $moviesSynopsis[] = $row['moviesSynopsis'];
+            $moviesGenres[] = $row['moviesGenre'];
+            $moviesScenarists[] = $row['moviesScenarist'];
+            $moviesDirectors[] = $row['moviesDirector'];
+            $moviesProductionHouses[] = $row['moviesProductionHouse'];
+            $moviesActors[] = $row['moviesActors'];
+            $moviesYears[] = $row['moviesYear'];
+            $moviesImgUrl[] = $row['moviesImgUrl'];
+            $moviesDurations[] = $row['moviesDuration'];
+            $moviesNumbersOfRatings[] = $row['moviesNumberOfRatings'];
+            $moviesSumsOfRatings[] = $row['moviesSumOfRatings'];
+        }
+
+        $i = 0;
+        $j = 0;
+
+        for($i = 0; $i < sizeof($moviesTitles); $i++){
+            
+            if(strpos($moviesTitles[$i], $search !== false) ){
+                $searchedTitles[$j] = $moviesTitles[$i];
+                $searchedSynopsis[$j] = $moviesSynopsis[$i];
+                $searchedScenarists[$j] = $moviesScenarists[$i];
+                $searchedDirectors[$j] = $moviesDirectors[$i];
+                $searchedProductionHouses[$j] = $moviesProductionHouses[$i];
+                $searchedActors[$j] = $moviesActors[$i];
+                $searchedYears[$j] = $moviesYears[$i];
+                $searchedImgUrl[$j] = $moviesImgUrl[$i];
+                $searchedDurations[$j] = $moviesDurations[$i];
+                $searchedNumbersOfRatings[$j] = $moviesNumbersOfRatings[$i];
+                $searchedSumsOfRatings[$j] = $moviesSumsOfRatings[$i];
+                $searchedNumMovies++;
+                $j++;
+            }
+        }
+
+        
+
+        if($searchedNumMovies == 0){
+            echo "<h1>Nije pronadjen nijedan rezultat.</h1>";
+            exit();
+        }
+
+
+        $searchedNumberOfRows = $searchedNumMovies % 4;
+        $searchedNumberOfColumns = 0;
+        if($searchedNumberOfRows !== 0){
+            $searchedNumberOfRows = (int)($searchedNumMovies / 4) + 1;
+            $searchedNumberOfColumns = $searchedNumMovies;
+        }
+        else{
+            $searchedNumberOfRows = (int)($searchedNumMovies / 4);
+            $searchedNumberOfColumns = $searchedNumMovies;
+        }
+
+        $i = 0;
+        $j = 0;
+        $tmp = 0;
+        $index = 0;
+
+        if($searchedNumberOfColumns >= 4){
+            $tmp = 4;
+        }
+        else{
+            $tmp = $searchedNumberOfColumns;
+        }
+
+        for ($i = 0; $i < $searchedNumberOfRows; $i++){
+            echo "<div class='row'>";
+            for($j = 0; $j < $tmp; $j++){
+                echo "<div class='col-md-3'>";
+                    
+                    echo "<div class='row title'>";
+                        echo "<h3>$searchedTitles[$index]</h3>";
+                    echo "</div>";
+
+                    echo "<div class='row image'>";
+                        echo "<a href='../html&php/movie.php?title=$searchedTitles[$index]'><img src='$thisGenreImgUrl[$index]' alt='$thisGenreTitles[$index]'></a>";
+                    echo "</div>";
+                
+                echo "</div>";
+                $index++;
+            }
+            $searchedNumberOfColumns = $searchedNumberOfColumns - 4;
+            if($searchedNumberOfColumns >= 4){
+                $tmp = 4;
+            }
+            else{
+                $tmp = $searchedNumberOfColumns;
+            }
+            echo "</div>";
+        }
+    }
 
             
     

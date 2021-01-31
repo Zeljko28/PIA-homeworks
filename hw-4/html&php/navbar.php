@@ -29,8 +29,10 @@
                 </div>
 
                 <div class="input">
-                    <input type="search" placeholder="Pretraži AMRDb">
-                    <a href="#">Pretraži</a>
+                    <form action="../libraries/search_between.php" method="post">
+                        <input id="search" name="search" type="search" placeholder="Pretraži AMRDb">
+                        <a href="javascript:{}" onclick="document.getElementById('search').forms.submit()">Pretraži</a>
+                    </form>
                 </div>
 
                 <div id="items" class="links">

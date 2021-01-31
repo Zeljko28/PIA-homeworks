@@ -41,7 +41,7 @@
                         <button id="log" name="submit" type="submit">Prijavite se</button>
                     </form>
                     <hr>
-                    <a id="reg" href="signup.html">Napravite nalog</a>
+                    <a id="reg" href="signup.php">Napravite nalog</a>
                 </div>
 
  

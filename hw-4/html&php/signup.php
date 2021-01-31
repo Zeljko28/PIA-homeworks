@@ -39,6 +39,13 @@
                 if($_GET["error"] == "invalidLastName"){
                     echo "<p style='color:red;'>Prezime sadrzi nedozvoljene simbole!</p>";
                 }
+                if($_GET["error"] == "invalidEmail"){
+                    echo "<p style='color:red;'>Neispravna email adresa!</p>";
+                }
+
+                if($_GET["error"] == "invalidUsername"){
+                    echo "<p style='color:red;'>Korisnisničko ime već postoji!</p>";
+                }
 
             }
 

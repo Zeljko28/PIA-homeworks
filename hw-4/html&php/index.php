@@ -16,10 +16,8 @@
 
                 require_once "../libraries/functions.php";
                 require_once "../libraries/connect_movies_db.php";
-                if(!isset($_GET["genre"])){
-                    showMovies($conn_movies);
-                }
-                else{
+
+                if(isset($_GET["genre"])){
                     if($_GET["genre"] == "comedy"){
                         showSpecificGenre($conn_movies, "Komedija");
                     }
@@ -56,7 +54,17 @@
                     if($_GET["genre"] == "crime"){
                         showSpecificGenre($conn_movies, "Kriminalistička drama");
                     }
+                    showMovies($conn_movies);
+                }
 
+
+                if(isset($_GET["search"])){
+                    $search = $_GET["search"];
+                    showSearchedMovies($conn_movies, $search);
+                }
+
+                else{
+                    showMovies($conn_movies);
                 }
             ?>
 
