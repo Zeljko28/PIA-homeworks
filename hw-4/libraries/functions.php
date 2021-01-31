@@ -495,3 +495,21 @@
         }
     }
 
+
+
+    function emptyMovieInput($title, $synopsis, $genre, $scenarist, $director, $productionHouse, $actors, $year, $imgUrl, $duration){
+        if(empty($title) || empty($synopsis) || empty($genre) || empty($scenarist) || empty($director) || empty($productionHouse)  || empty($actors) || empty($year) || empty($imgUrl) || empty($duration)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    function addMovie($conn_movies, $title, $synopsis, $genre, $scenarist, $director, $productionHouse, $actors, $year, $imgUrl, $duration){
+        $numOfRatings = 0;
+        $sumOfRatings = 0;
+        $data = "INSERT INTO movies (moviesTitle, moviesSynopsis, moviesGenre, moviesScenarist, moviesDirector, moviesProductionHouse, moviesActors, moviesYear, moviesImgUrl, moviesDuration, moviesNumberOfRatings, moviesSumOfRatings) VALUES ('$title', '$synopsis', '$genre', '$scenarist', '$director', '$productionHouse', '$actors', '$year', '$imgUrl', '$duration', '$numOfRatings', '$sumOfRatings')";
+
+        mysqli_query($conn_movies, $data);
+    }

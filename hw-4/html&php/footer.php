@@ -1,4 +1,14 @@
-        
+<?php
+
+    
+    if(!isset($_SESSION["username"])){
+        header("Location: login.php");
+    }
+
+?>
+
+
+
         <div class="container-fluid footer">
 
             <a href="#"><i class="fab fa-facebook-f"></i></a>

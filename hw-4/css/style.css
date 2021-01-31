@@ -122,6 +122,7 @@ body{
     border-radius: 5px;
     border: 3px solid lightgrey;
     box-shadow: 5px 5px 3px grey;
+    margin-bottom: 20px;
 }
 
 .movies .row .col-md-3 .title{
@@ -184,26 +185,29 @@ body{
 
 .genres{
     margin-top: 70px;
-    background-color: rgba(211, 211, 211, 0.2);
+    background-color: white;
+    border: 2px solid lightgrey;
+    box-shadow: 5px 5px 3px grey;
+    margin-bottom: 20px;
 }
 
 .genres .row{
     padding: 20px;
     text-align: center;
-    border: 2px solid rgba(211, 211, 211, 0.2);
+    border: 1px solid rgba(211, 211, 211, 0.2);
 }
 
 .genres .row a{
     font-family: "Candara";
     font-size: 20pt;
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 10px;
     border-radius: 5px;
 }
 
 .genres .row a:hover{
-    background-color: rgba(211, 211, 211, 0.2);
+    background-color: rgba(211, 211, 211, 0.7);
 }
 
 .movie{
@@ -211,6 +215,7 @@ body{
     border: 2px solid lightgrey;
     box-shadow: 5px 5px 3px grey;
     margin-top: 70px;
+    margin-bottom: 20px;
 }
 
 .movie .row{
@@ -265,6 +270,95 @@ body{
     
 }
 
+
+.options{
+    margin-top: 70px;
+    background-color: white;
+    border: 2px solid lightgrey;
+    box-shadow: 5px 5px 3px grey;
+    margin-bottom: 20px;
+}
+
+.options .row{
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(211, 211, 211, 0.2);
+}
+
+.options .row a{
+    font-family: "Candara";
+    font-size: 20pt;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.options .row a:hover{
+    background-color: rgba(211, 211, 211, 0.7);
+}
+
+
+
+
+.add{
+    display: block;
+    width: 450px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+    box-shadow: 5px 5px 3px grey;
+}
+
+.add h2{
+    margin-bottom: 40px;
+    font-family: "Candara";
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey;
+}
+
+.add #title, .add #synopsis, .add #genre, .add #scenarist, .add #director, .add #production-house, .add #actors, .add #year, .add #img-url, .add #duration{  
+    width: 350px;
+    margin-bottom: 20px;
+
+    height: 45px;
+    font-size: 13pt;
+    font-family: "Candara";
+
+}
+.add #lbl-title, .add #lbl-synopsis, .add #lbl-genre, .add #lbl-scenarist, .add #lbl-director, .add #lbl-production-house, .add #lbl-actors, .add #lbl-year, .add #lbl-img-url, .add #lbl-duration{
+    font-family: "Candara"; 
+    font-size: 12pt;
+
+}
+
+.add #submit{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 15pt;
+    font-family: "Candara";
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    color: grey;
+    padding: 9px;
+    width: 100%;
+    border: 2px solid grey;
+    border-radius: 3px;
+}
+
+.add #submit:hover{
+    background-color: rgb(145, 71, 255);
+    border: 2px solid rgb(145, 71, 255);
+    color: white;
+}
 
 
 

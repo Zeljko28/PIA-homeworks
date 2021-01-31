@@ -38,7 +38,7 @@
                     <?php
                         
                         if(($_SESSION["privileges"] == "admin")){
-                            echo "<a id='options' class='link' href='options.php'>Opcije</a>";
+                            echo "<a id='options' class='link' href='admin_options.php'>Opcije</a>";
                         }
                     ?>
                     
