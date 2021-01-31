@@ -35,9 +35,15 @@
 
                 <div id="items" class="links">
                     <a id="home" class="link" href="index.php">Početna strana</a>
+                    <?php
+                        
+                        if(($_SESSION["privileges"] == "admin")){
+                            echo "<a id='options' class='link' href='options.php'>Opcije</a>";
+                        }
+                    ?>
                     
                     <a id="genres" class="link" href="genres.php">Žanrovi</a>
-                    <a class="link" href="#">Odjavite se</a>
+                    <a class="link" href="../libraries/signout_lib.php">Odjavite se</a>
                 </div>
 
                 <div class="btn">

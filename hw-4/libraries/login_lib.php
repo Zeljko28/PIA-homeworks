@@ -14,9 +14,25 @@
             exit();
         }
 
-        if(invalidLogin($conn, $username, $password) == true){
+        if(invalidLogin($conn, $username, $password) == ""){
             header("Location: ../html&php/login.php?error=invalidUsernameOrPassword");
             $error = "Neispravno korisničko ime ili lozinka!";
+            exit();
+        }
+
+        if(invalidLogin($conn, $username, $password) == "regular"){
+            session_start();
+            $_SESSION["username"] = $username;
+            $_SESSION["privileges"] = "regular";
+            header("Location: ../html&php/index.php");
+            exit();
+        }
+
+        if(invalidLogin($conn, $username, $password) == "admin"){
+            session_start();
+            $_SESSION["username"] = $username;
+            $_SESSION["privileges"] = "admin";
+            header("Location: ../html&php/index.php");
             exit();
         }
 

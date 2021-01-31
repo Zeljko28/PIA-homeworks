@@ -77,20 +77,24 @@
         $usernames = array();
         $emails = array();
         $passwords = array();
+        $privileges = array();
+        $privilege = "";
 
         while($row = mysqli_fetch_array($query)){
             $usernames[] = $row['usersUsername'];
             $emails[] = $row['usersEmail'];
             $passwords[] = $row['usersPassword'];
+            $privileges[] = $row['usersPrivileges'];
         }
         
-        $result = true;
+        $result = "";
 
         $i = 0;
         for($i = 0; $i < sizeof($usernames); $i++){
             if($usernames[$i] === $username || $emails[$i] === $username){
                 if($passwords[$i] === $password){
-                    $result = false;
+                    $privilege = $privileges[$i];
+                    $result = $privilege;
                     break;
                 }
             }
