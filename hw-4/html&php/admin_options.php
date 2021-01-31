@@ -25,7 +25,7 @@
         </div>
 
         <div class="row">
-            <a href="#">Obrišite film</a>
+            <a href="delete_movie.php">Obrišite film</a>
         </div>
 
     </div>
