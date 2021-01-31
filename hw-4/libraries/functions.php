@@ -513,3 +513,40 @@
 
         mysqli_query($conn_movies, $data);
     }
+
+    function showMoviesToChange($conn_movies){
+        $sql = "SELECT count(moviesTitle) AS total FROM movies";
+        $result = mysqli_query($conn_movies, $sql);
+        $values = mysqli_fetch_assoc($result);
+        $num_movies = $values['total'];
+
+        $query = mysqli_query($conn_movies, "SELECT * FROM movies");
+
+        while($row = mysqli_fetch_array($query)){
+            $moviesTitles[] = $row['moviesTitle'];
+            $moviesSynopsis[] = $row['moviesSynopsis'];
+            $moviesGenres[] = $row['moviesGenre'];
+            $moviesScenarists[] = $row['moviesScenarist'];
+            $moviesDirectors[] = $row['moviesDirector'];
+            $moviesProductionHouses[] = $row['moviesProductionHouse'];
+            $moviesActors[] = $row['moviesActors'];
+            $moviesYears[] = $row['moviesYear'];
+            $moviesImgUrl[] = $row['moviesImgUrl'];
+            $moviesDurations[] = $row['moviesDuration'];
+            $moviesNumbersOfRatings[] = $row['moviesNumberOfRatings'];
+            $moviesSumsOfRatings[] = $row['moviesSumOfRatings'];
+        }
+
+        $index = 0;
+        $i = 0;
+
+        for ($i = 0; $i < sizeOf($moviesTitles); $i++){
+            echo "<div class='row'>";
+                echo "<a href='../html&php/update_choosen_movie.php?choosen=$moviesTitles[$i]'>$moviesTitles[$i]</a>";
+            echo "</div>";
+        }
+    }
+
+
+            
+    

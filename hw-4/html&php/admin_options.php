@@ -21,11 +21,11 @@
         </div>
 
         <div class="row">
-            <a href="options.php?option=updateMovie">Preuredite film</a>
+            <a href="update_movie.php">Preuredite film</a>
         </div>
 
         <div class="row">
-            <a href="options.php?option=removeMovie">Obrišite film</a>
+            <a href="#">Obrišite film</a>
         </div>
 
     </div>
